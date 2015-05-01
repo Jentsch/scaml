@@ -13,6 +13,9 @@ sbt web
 
 cd "$WEB"
 git add -A .
-git commit -m "rebuild pages at $rev" --author="Travis <travis@example.com>"
-git push
+git config --local user.name "Travis"
+git config --local user.email "Travis <travis@example.com>"
+git config --local push.default matching
+git commit -m "rebuild pages at $rev"
+git push -q
 cd -
