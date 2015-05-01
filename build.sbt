@@ -1,8 +1,8 @@
-name := "scex"
+name := "scaml"
 
 version := "0.2.1-SNAPSHOT"
 
-organization := "org.scex"
+organization := "org.scaml"
 
 description := "A Scala innerDSL to describe documents"
 
@@ -25,9 +25,9 @@ libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0" % "test"
 scalacOptions in Test += "-Yrangepos"
 
 // API
-scalacOptions in (Compile, doc) ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blob/master€{FILE_PATH}.scala")
+scalacOptions in (Compile, doc) ++= Opts.doc.sourceUrl("https://github.com/Jentsch/scaml/blob/master€{FILE_PATH}.scala")
 
-scalacOptions in (Compile, doc) ++= Opts.doc.title("Scex")
+scalacOptions in (Compile, doc) ++= Opts.doc.title("Scaml")
 
 
 bintrayPublishSettings

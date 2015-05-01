@@ -1,8 +1,8 @@
-package org.scex.sample
+package org.scaml.sample
 
-import org.scex._
-import org.scex.attributes._
-import org.scex.templates._
+import org.scaml._
+import org.scaml.attributes._
+import org.scaml.templates._
 
 object Main extends App {
   private val examples = Map(

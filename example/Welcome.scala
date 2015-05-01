@@ -1,10 +1,10 @@
-package org.scex.sample
+package org.scaml.sample
 
-import org.scex._
-import org.scex.attributes._
+import org.scaml._
+import org.scaml.attributes._
 
 object Welcome extends templates.Run {
-  title"Scex"
+  title"Scaml"
 
   subtitle"An innerDSL to describe Documents"
 

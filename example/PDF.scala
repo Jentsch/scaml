@@ -1,11 +1,11 @@
-package org.scex.sample
+package org.scaml.sample
 
-import org.scex._
-import org.scex.attributes._
-import org.scex.templates._
+import org.scaml._
+import org.scaml.attributes._
+import org.scaml.templates._
 
 object PDF extends Presentation with Run {
-  title"Scex"
+  title"Scaml"
 
   subtitle"Sc(ala) (Lat)ex"
 
@@ -64,7 +64,7 @@ object PDF extends Presentation with Run {
       Text(" / "),
       Text(repo.name) add +TextUnderline))
 
-  val repo = GitHubRepo("djentsch", "Scex")
+  val repo = GitHubRepo("djentsch", "scaml")
 
   p"""
     p"Get involved $$repo"
