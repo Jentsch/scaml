@@ -36,7 +36,7 @@ object ScamlBuild extends Build {
       webTask,
       scalaVersion := "2.11.6",
       testOptions in Test := Tests.Argument(testOut) :: Nil,
-      libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.3"
+      libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
     )
 
   lazy val example =
