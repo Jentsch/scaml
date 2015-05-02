@@ -1,2 +1,3 @@
-<org.scaml.BuilderTest-stats timestamp="1430556338443"><stats time="4" expectations="2" successes="2" examples="2"></stats></org.scaml.BuilderTest-stats>
-<org.scaml.BuilderTest-stats timestamp="1430556394152"><stats time="5" expectations="2" successes="2" examples="2"></stats></org.scaml.BuilderTest-stats>
+<org.scaml.BuilderTest-stats timestamp="1430487354816"><stats expectations="2" successes="2" examples="2"></stats></org.scaml.BuilderTest-stats>
+<org.scaml.BuilderTest-stats timestamp="1430504157340"><stats expectations="2" successes="2" examples="2"></stats></org.scaml.BuilderTest-stats>
+<org.scaml.BuilderTest-stats timestamp="1430561115280"><stats time="11" expectations="2" successes="2" examples="2"></stats></org.scaml.BuilderTest-stats>
