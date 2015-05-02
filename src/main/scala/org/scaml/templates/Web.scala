@@ -1,19 +1,37 @@
 package org.scaml.templates
 
+import org.scaml.Modifiers
 import org.scaml.attributes._
 
 trait Web extends General {
-  override def p = Tag > "p"
+  /** Paragraph */
+  override def p: Modifiers = Tag > "p"
 
-  override def title = Tag > "h1"
+  /**
+   * Highest level of all headlines
+   */
+  override def title: Modifiers = Tag > "h1"
 
-  override def chapter = Tag > "h2"
+  override def chapter: Modifiers = Tag > "h2"
 
-  override def section = Tag > "h3"
+  override def section: Modifiers = Tag > "h3"
 
-  def form = Tag > "form"
+  /**
+   * Usage:
+   * {{{
+   *   form | p"""
+   *     $section {news letter}
+   *     $label E-Mail $input $br
+   *     $button
+   *   """
+   * }}}
+   *
+   */
+  def form: Modifiers = Tag > "form"
 
-  def input = Tag > "input"
+  def input: Modifiers = Tag > "input"
 
-  def button = Tag > "button"
+  def button: Modifiers = Tag > "button"
+
+  def br : Modifiers = Tag > "br"
 }

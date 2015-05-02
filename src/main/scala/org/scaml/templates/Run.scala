@@ -3,7 +3,7 @@ package org.scaml.templates
 import org.scaml._
 
 /**
- * A document annotated with this trait will be runnable.
+ * A document annotated has a main-method which will create a local HTML-file.
  */
 trait Run extends General with App {
 
