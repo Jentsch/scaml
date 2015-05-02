@@ -1,0 +1,551 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>scaml - Scaml - org.scaml</title>
+          <meta name="description" content="scaml - Scaml - org.scaml" />
+          <meta name="keywords" content="scaml Scaml org.scaml" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'org.scaml.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="org">org</a></p>
+        <h1>scaml</h1><span class="permalink">
+      <a href="../../index.html#org.scaml.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scaml</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scaml is a tool to build documents in Scala.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.scaml"><span>scaml</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.scaml.Annotation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Annotation[T]extendsAnyRef"></a>
+      <a id="Annotation[T]:Annotation[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotation.html"><span class="name">Annotation</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Annotation[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Annotations for <code>Nodes</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Annotations for <code>Nodes</code>. Has two direct subclasses: Attribute and Processor.
+</p></div></div>
+    </li><li name="org.scaml.Attribute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Attribute[T]extendsAnnotation[T]"></a>
+      <a id="Attribute[T]:Attribute[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Attribute.html"><span class="name">Attribute</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scaml.Annotation">Annotation</a>[<span class="extype" name="org.scaml.Attribute.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Attribute[T]extendsAnnotation[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Attributes are passive data for a generator, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Attributes are passive data for a generator, e.g. FontFamily.
+</p></div></div>
+    </li><li name="org.scaml.BatchModifiers" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BatchModifiersextendsAnyRef"></a>
+      <a id="BatchModifiers:BatchModifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BatchModifiers.html"><span class="name">BatchModifiers</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@BatchModifiersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Used to modify multiple nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Used to modify multiple nodes.</p><pre><span class="kw">def</span> list = {
+  <span class="kw">val</span> block = text
+  <span class="kw">val</span> line  =
+    text &amp;
+    SpaceAfter &gt; <span class="num">0</span> &amp;
+    PreText &gt; <span class="lit">"￢ﾀﾢ "</span>
+
+  line asMinorOf block
+}
+
+list ||
+  <span class="lit">"Item 1"</span> |
+  <span class="lit">"Item 2"</span></pre></div></div>
+    </li><li name="org.scaml.Builder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BuilderextendsElement"></a>
+      <a id="Builder:Builder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Builder.html"><span class="name">Builder</span></a><span class="result"> extends <a href="Element.html" class="extype" name="org.scaml.Element">Element</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@BuilderextendsElement" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper to create new nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Helper to create new nodes. Use one of its subclasses to create your own document.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@implicitNotFound</span><span class="args">(<span>
+      
+      <span class="symbol">&quot;Use this method inside a Builder.&quot;</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.scaml.Element" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ElementextendsNode"></a>
+      <a id="Element:Element"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Element.html"><span class="name">Element</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@ElementextendsNode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Graphic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GraphicextendsNode"></a>
+      <a id="Graphic:Graphic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Graphic.html"><span class="name">Graphic</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@GraphicextendsNode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Inlineable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InlineableextendsAnyRef"></a>
+      <a id="Inlineable:Inlineable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Inlineable.html"><span class="name">Inlineable</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@InlineableextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Marker trait for everything that could be used inline
+</p>
+    </li><li name="org.scaml.Modifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Modifier[T]extendsModifierswithProductwithSerializable"></a>
+      <a id="Modifier[T]:Modifier[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Modifier.html"><span class="name">Modifier</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="annotation">annotation: <a href="Annotation.html" class="extype" name="org.scaml.Annotation">Annotation</a>[<span class="extype" name="org.scaml.Modifier.T">T</span>]</span>, <span name="value">value: <span class="extype" name="org.scaml.Modifier.T">T</span></span>)</span><span class="result"> extends <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Modifier[T]extendsModifierswithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tuple of an Annotation and a value, ready to be applied to a node.</p><div class="fullcomment"><div class="comment cmt"><p>A tuple of an Annotation and a value, ready to be applied to a node.
+A single Modifier extends the seq type Modifiers because it allows all
+operations like Modifiers.</p><pre><span class="kw">val</span> warning = TextColor &gt; red</pre><p>Where <code>TextColor</code> is an <code>Attribute</code> (of type <code>Color</code>) and <code>red</code> a predefined color
+(both are part of <code>scaml.attributes</code>.</p><p>Inside a <code>Builder</code> it's now possible to do:</p><pre>text &amp; warning | <span class="lit">"Warning message"</span></pre><p>or even shorter:</p><pre><span class="kw">val</span> warning = text &amp; TextColor &gt; red
+warning<span class="lit">"Warning message"</span></pre></div></div>
+    </li><li name="org.scaml.Modifiers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ModifiersextendsIterable[org.scaml.Modifier[_]]withInlineable"></a>
+      <a id="Modifiers:Modifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[_]] with <a href="Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@ModifiersextendsIterable[org.scaml.Modifier[_]]withInlineable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A set of Modifiers.</p><div class="fullcomment"><div class="comment cmt"><p>A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
+this way.
+</p></div></div>
+    </li><li name="org.scaml.Node" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NodeextendsInlineable"></a>
+      <a id="Node:Node"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Node.html"><span class="name">Node</span></a><span class="result"> extends <a href="Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@NodeextendsInlineable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Processor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Processor[T]extendsAnnotation[T]"></a>
+      <a id="Processor[T]:Processor[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Processor.html"><span class="name">Processor</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scaml.Annotation">Annotation</a>[<span class="extype" name="org.scaml.Processor.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Processor[T]extendsAnnotation[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A processor can modify annotated nodes.</p>
+    </li><li name="org.scaml.Text" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TextextendsNodewithProductwithSerializable"></a>
+      <a id="Text:Text"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Text.html"><span class="name">Text</span></a><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@TextextendsNodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Text elements contains only one string and have no attributes.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.scaml.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BatchModifiers"></a>
+      <a id="BatchModifiers:BatchModifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BatchModifiers$.html"><span class="name">BatchModifiers</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@BatchModifiers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Element"></a>
+      <a id="Element:Element"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Element$.html"><span class="name">Element</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Element" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Modifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Modifiers"></a>
+      <a id="Modifiers:Modifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Modifiers$.html"><span class="name">Modifiers</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Modifiers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.Processor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Processor"></a>
+      <a id="Processor:Processor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Processor$.html"><span class="name">Processor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Processor" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.attributes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="attributes"></a>
+      <a id="attributes:attributes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="attributes/package.html"><span class="name">attributes</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@attributes" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.generators" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="generators"></a>
+      <a id="generators:generators"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="generators/package.html"><span class="name">generators</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@generators" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml#strToText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="strToText(str:String):org.scaml.Text"></a>
+      <a id="strToText(String):Text"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">strToText</span><span class="params">(<span name="str">str: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Text.html" class="extype" name="org.scaml.Text">Text</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@strToText(str:String):org.scaml.Text" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml#stringContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stringContext:Option[StringContext]"></a>
+      <a id="stringContext:Option[StringContext]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stringContext</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.StringContext">StringContext</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@stringContext:Option[StringContext]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml#stringContext_=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stringContext_=(cs:StringContext):Unit"></a>
+      <a id="stringContext_=(StringContext):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: stringContext_$eq" class="name">stringContext_=</span><span class="params">(<span name="cs">cs: <span class="extype" name="scala.StringContext">StringContext</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@stringContext_=(cs:StringContext):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml#strsToTexts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="strsToTexts(strs:Seq[String]):Seq[org.scaml.Text]"></a>
+      <a id="strsToTexts(Seq[String]):Seq[Text]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">strsToTexts</span><span class="params">(<span name="strs">strs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="Text.html" class="extype" name="org.scaml.Text">Text</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@strsToTexts(strs:Seq[String]):Seq[org.scaml.Text]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.templates" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="templates"></a>
+      <a id="templates:templates"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="templates/package.html"><span class="name">templates</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@templates" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
