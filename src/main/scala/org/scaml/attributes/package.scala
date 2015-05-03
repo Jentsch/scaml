@@ -66,10 +66,11 @@ package object attributes
   /** May not supported by all generators. */
   val TextBlink = new Toggle("TextBlink")
 
-  implicit class RichDouble(val int: Double) {
-    def mm = Distance.millimeter(int)
-    def cm = Distance.centimeter(int)
-    def pt = Distance.point(int)
+  implicit class RichInt(val int: Double) {
+    import Distance._
+    def mm = millimeter(int)
+    def cm = centimeter(int)
+    def pt = point(int)
   }
 
   val SpaceBefore = new Attribute[Distance]("SpaceBefore")
@@ -93,4 +94,3 @@ package object attributes
 package attributes {
   final class TextTransform private[attributes] (val name: String)
 }
-

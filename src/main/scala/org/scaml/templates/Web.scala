@@ -1,6 +1,6 @@
 package org.scaml.templates
 
-import org.scaml.Modifiers
+import org.scaml.{Element, Modifiers, Node}
 import org.scaml.attributes._
 
 trait Web extends General {
@@ -15,6 +15,10 @@ trait Web extends General {
   override def chapter: Modifiers = Tag > "h2"
 
   override def section: Modifiers = Tag > "h3"
+
+  def header: Modifiers = Tag > "header"
+
+  def footer: Modifiers = Tag > "footer"
 
   /**
    * Usage:
@@ -33,5 +37,15 @@ trait Web extends General {
 
   def button: Modifiers = Tag > "button"
 
-  def br : Modifiers = Tag > "br"
+  def br: Node = Element(Nil, Tag > "br")
+
+  override def em: Modifiers = Tag > "em"
+
+  def strong: Modifiers = Tag > "strong"
+
+  def label: Modifiers = Tag > "label"
+
+  def sup: Modifiers = Tag > "sup"
+
+  def sub: Modifiers = Tag > "sub"
 }

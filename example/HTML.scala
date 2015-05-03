@@ -3,7 +3,7 @@ package org.scaml.sample
 import org.scaml._
 import org.scaml.attributes._
 
-object HTML extends templates.Presentation with templates.Run {
+object HTML extends templates.Web with templates.Run {
   title"Scaml"
 
   subtitle"Sc(ala) (Lat)ex"

@@ -1,7 +1,7 @@
 package org.scaml.templates
 
 import org.scaml._
-import attributes._
+import org.scaml.attributes._
 
 trait General extends Builder {
 
@@ -44,6 +44,7 @@ trait General extends Builder {
   def subsection = headline &
     FontSize > 21.pt
 
+  /** Emphasis text */
   def em = text & bold
 
   def list = {
