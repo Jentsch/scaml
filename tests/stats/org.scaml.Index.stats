@@ -1,6 +1,6 @@
-<org.scaml.Index-results timestamp="1430575987196"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<org.scaml.Index-results timestamp="1430648494204"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
-<org.scaml.Index-stats timestamp="1430575987204"><stats pending="1" time="2" expectations="1" examples="1"></stats></org.scaml.Index-stats>
-<org.scaml.Index-results timestamp="1430576044052"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" expectations="1" examples="1"></stats></result>
+<org.scaml.Index-stats timestamp="1430648494232"><stats pending="1" time="2" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-results timestamp="1430648550181"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
-<org.scaml.Index-stats timestamp="1430576044074"><stats pending="1" time="3" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-stats timestamp="1430648550213"><stats pending="1" time="4" expectations="1" examples="1"></stats></org.scaml.Index-stats>
