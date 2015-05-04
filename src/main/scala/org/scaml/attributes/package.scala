@@ -12,34 +12,6 @@ package object attributes
    */
   private[attributes]type Attribute[T] = org.scaml.Attribute[T]
 
-  val PreText = Processor("PreText") { (elem: Element, value: String) =>
-    def helper(value: String, node: Node): Node = node match {
-      case Element(first :: others, attr) =>
-        Element(helper(value, first) :: others, attr)
-      case Element(none, attr) =>
-        Element(Text(value) +: none, attr)
-      case Text(text) =>
-        Text(value + text)
-      case _ =>
-        node
-    }
-
-    helper(value, elem)
-  }
-
-  val Hyphen = Processor("hypen") { (node: Node, lang: Lang) =>
-    def process(lang: Lang, node: Node): Node = node match {
-      case elem: Element =>
-        Element(elem.children map (process(lang, _)), elem.modifiers)
-      case Text(text) =>
-        Text(lang addHypenTo text)
-      case _ =>
-        node
-    }
-
-    process(lang, node)
-  }
-
   object Link extends Attribute[String]("Link") {
     def >(url: URL): Modifier[String] =
       this > url.toString

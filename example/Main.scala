@@ -7,7 +7,6 @@ import org.scaml.templates._
 object Main extends App {
   private val examples = Map(
     "HTML" -> HTML,
-    "PDF" -> PDF,
     "Welcome" -> Welcome)
 
   args.headOption getOrElse ("HTML") match {

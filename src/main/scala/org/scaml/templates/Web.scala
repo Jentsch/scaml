@@ -48,4 +48,8 @@ trait Web extends General {
   def sup: Modifiers = Tag > "sup"
 
   def sub: Modifiers = Tag > "sub"
+
+
+  def list =
+    Tag > "li" asMinorOf Tag > "ul"
 }

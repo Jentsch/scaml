@@ -32,8 +32,7 @@ trait General extends Builder {
   def subtitle = headline
 
   def author =
-    headline &
-    PreText > "Autor: "
+    headline
 
   def chapter = headline &
     BreakBefore > page &
@@ -47,14 +46,5 @@ trait General extends Builder {
   /** Emphasis text */
   def em = text & bold
 
-  def list = {
-    val block = text
-    val line =
-      text &
-        SpaceAfter > 0.pt &
-        PreText > "• "
-
-    line asMinorOf block
-  }
 }
 

@@ -1,7 +1,7 @@
 package org.scaml
 
 /**
- * A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
+ * A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed
  * this way.
  */
 trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
@@ -11,11 +11,11 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
   def iterator: Iterator[Modifier[_]] = modifiers.iterator
 
   // XXX: Is in O(n), should be O(log n)
-  def get[T](annotation: Annotation[T]): Option[T] =
-    modifiers.collectFirst { case annotation(t) => t }
+  def get[T](attribute: Attribute[T]): Option[T] =
+    modifiers.collectFirst { case attribute(t) => t }
 
-  def isDefinedAt(annotation: Annotation[_]): Boolean =
-    get(annotation).isDefined
+  def isDefinedAt(attribute: Attribute[_]): Boolean =
+    get(attribute).isDefined
 
   def &(that: Modifiers): Modifiers =
     this ++ that
@@ -27,7 +27,7 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
     Modifiers(modifiers filterNot condition)
 
   def ++(that: Modifiers): Modifiers =
-    Modifiers(modifiers.filterNot { bind => that.annotations.contains(bind.annotation) } ++ that.modifiers)
+    Modifiers(modifiers.filterNot { bind => that.attributes.contains(bind.attribute) } ++ that.modifiers)
 
   /**
    * Binds attributes to a node a append the node to a builder.
@@ -42,9 +42,9 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
     BatchModifiers(that, this)
 
   /**
-   * Returns all annotations of this modifier.
+   * Returns all attributes of this modifier.
    */
-  def annotations: Set[Annotation[_]] = modifiers.map { _.annotation }.toSet
+  def attributes: Set[Attribute[_]] = modifiers.map { _.attribute }.toSet
 
   override def toString() = modifiers.mkString("Modifiers(", ", ", ")")
 

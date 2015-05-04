@@ -50,18 +50,18 @@ object HTML {
         "page-break-before:always"
       case Modifier(BreakAfter, page) =>
         "page-break-after:always"
-      case Modifier(annotation, value) if annotation != Link =>
-        nameTranslation(annotation) + ": " + value.toString
+      case Modifier(attribute, value) if attribute != Link =>
+        nameTranslation(attribute) + ": " + value.toString
     }.mkString("; ")
 
-  private val nameTranslation = Map[Annotation[_], String](
+  private val nameTranslation = Map[Attribute[_], String](
     TextColor -> "color",
     SpaceAfter -> "margin-bottom",
     SpaceBefore -> "margin-top").
     withDefault(genericToCSS)
 
-  private def genericToCSS(annotation: Annotation[_]): String =
-    annotation.name.foldLeft("") {
+  private def genericToCSS(attribute: Attribute[_]): String =
+    attribute.name.foldLeft("") {
       case (r, upper) if upper.isUpper =>
         r + '-' + upper.toLower
       case (r, lower) =>
@@ -70,8 +70,8 @@ object HTML {
 
 
   private def styleModifiers(modifiers: Modifiers) =
-    modifiers.filterNot { case Modifier(anno, _) => isIgnoredAnnotation(anno) }
+    modifiers.filterNot { case Modifier(attribute, _) => isIgnoredAttribute(attribute) }
 
-  private val isIgnoredAnnotation: Set[Annotation[_]] = Set(Tag)
+  private val isIgnoredAttribute: Set[Attribute[_]] = Set(Tag)
 }
 

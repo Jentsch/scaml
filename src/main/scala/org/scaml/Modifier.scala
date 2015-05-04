@@ -1,7 +1,7 @@
 package org.scaml
 
 /**
- * A tuple of an Annotation and a value, ready to be applied to a node.
+ * A tuple of an Attribute and a value, ready to be applied to a node.
  * A single Modifier extends the seq type Modifiers because it allows all
  * operations like Modifiers.
  *
@@ -23,11 +23,11 @@ package org.scaml
  * }}}
  *
  */
-case class Modifier[T](annotation: Annotation[T], value: T)
+case class Modifier[T](attribute: Attribute[T], value: T)
   extends Modifiers {
 
   protected val modifiers = List(this)
 
-  override def toString() = annotation.toString + "> " + value.toString
+  override def toString() = attribute.toString + "> " + value.toString
 }
 

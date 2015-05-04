@@ -16,7 +16,6 @@ def is = s2"""
 
 ### Attributes
   ${see(new attributes.DistanceTest)}
-  ${see(new attributes.HyphenTest)}
 """
 }
 
