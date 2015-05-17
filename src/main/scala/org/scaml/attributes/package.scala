@@ -7,11 +7,6 @@ package object attributes
   with Color.PreDefs
   with Display {
 
-  /**
-   * Imports the Attribute type into this package.
-   */
-  private[attributes]type Attribute[T] = org.scaml.Attribute[T]
-
   object Link extends Attribute[String]("Link") {
     def >(url: URL): Modifier[String] =
       this > url.toString

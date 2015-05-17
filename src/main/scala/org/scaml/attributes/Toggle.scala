@@ -1,5 +1,7 @@
 package org.scaml.attributes
 
+import org.scaml.Attribute
+
 /**
  * Adds unary + and - prefixes operators for boolean attributes. See 'Known Subclasses' below for
  * examples.

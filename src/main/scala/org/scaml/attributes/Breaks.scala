@@ -1,5 +1,7 @@
 package org.scaml.attributes
 
+import org.scaml.Attribute
+
 trait Breaks {
   sealed class Break(val name: String) {
     override def toString = name

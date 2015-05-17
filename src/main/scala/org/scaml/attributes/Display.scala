@@ -1,5 +1,7 @@
 package org.scaml.attributes
 
+import org.scaml.Attribute
+
 private[scaml] trait Display {
   /**
    * Controls how the element will be displayed.
