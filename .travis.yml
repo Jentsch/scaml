@@ -16,7 +16,7 @@ cache:
 after_success:
   - >
       test "${TRAVIS_PULL_REQUEST}" = 'false' &&
-      sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" &&
+      sh "$TRAVIS_BUILD_DIR/.travis.prepare.bintray.sh" &&
       sbt 'set version := version.value.replace("-SNAPSHOT", "." + System.getenv("TRAVIS_BUILD_NUMBER"))' +publish
   - >
       test "${TRAVIS_PULL_REQUEST}" = 'false' &&

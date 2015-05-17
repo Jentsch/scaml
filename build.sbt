@@ -44,5 +44,3 @@ scalacOptions in (Compile, doc) ++= Opts.doc.sourceUrl("https://github.com/Jents
 
 scalacOptions in (Compile, doc) ++= Opts.doc.title("Scaml")
 
-
-bintrayPublishSettings
