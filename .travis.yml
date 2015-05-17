@@ -1,6 +1,6 @@
 language: scala
 script:
-  - sbt clean test
+  - sbt clean +test
   - sbt "project example" "run"
 
   # Tricks to avoid unnecessary cache updates
@@ -17,5 +17,7 @@ after_success:
   - >
       test "${TRAVIS_PULL_REQUEST}" = 'false' &&
       sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" &&
-      sbt 'set version := version.value.replace("-SNAPSHOT", "." + System.getenv("TRAVIS_BUILD_NUMBER"))' publish
-  - bash .publishWeb.sh
+      sbt 'set version := version.value.replace("-SNAPSHOT", "." + System.getenv("TRAVIS_BUILD_NUMBER"))' +publish
+  - >
+      test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+      bash .publishWeb.sh

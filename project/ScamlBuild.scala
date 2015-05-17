@@ -34,15 +34,12 @@ object ScamlBuild extends Build {
   lazy val main =
     Project(id = "main", base = file(".")) settings (
       webTask,
-      scalaVersion := "2.11.6",
-      testOptions in Test := Tests.Argument(testOut) :: Nil,
-      libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
+      testOptions in Test := Tests.Argument(testOut) :: Nil
     )
 
   lazy val example =
     Project(id = "example", base = file("example")) dependsOn main settings (
-      description := "Some simple examples to learn scaml",
-      scalaVersion := "2.11.6"
+      description := "Some simple examples to learn scaml"
     )
 
 }
