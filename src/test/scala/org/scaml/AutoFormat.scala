@@ -17,7 +17,7 @@ class AutoFormatTest extends Specification {
     val result = p"$greeting $user"
   }
 
-  // mini innerDSL to write English like tests
+  /** Mini innerDSL to write English like tests */
   private object textparts {
     def of(e: Element) = e.children.map(_.toText)
   }
