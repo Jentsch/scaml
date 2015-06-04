@@ -1,20 +1,19 @@
-package org.scaml.generators
+package org.scaml
 
-import org.scaml._
 import org.scaml.attributes._
 
 import scala.xml.{Elem => XElem, MetaData, NamespaceBinding, Node => XNode, Null, Text => XText, UnprefixedAttribute}
 
 object HTML {
-  private val nameSpace = new NamespaceBinding("ii", "ii", null)
+  private val nameSpace: NamespaceBinding = scala.xml.TopScope
 
-  def apply(node: Node): XNode =
+  def apply(document: Node): XNode =
     <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       </head>
       <body>
-        {content(node)}
+        {content(document)}
       </body>
     </html>
 
@@ -42,8 +41,8 @@ object HTML {
     XElem(null, name, meta, nameSpace, true, children: _*)
   }
 
-  private def style(atts: Modifiers): String =
-    atts.collect {
+  private def style(modifiers: Modifiers): String =
+    modifiers.collect {
       case Modifier(TextUnderline, true) =>
         "text-decoration: underline"
       case Modifier(BreakBefore, page) =>

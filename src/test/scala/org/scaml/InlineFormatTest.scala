@@ -10,7 +10,7 @@ class InlineFormatTest extends Specification {
     val c = p"This is ${TextColor > red} {red and this also}"
   }
 
-  object textparts {
+  object textParts {
     def of (e: Element) = e.children.map(_.toText)
   }
 
@@ -18,9 +18,9 @@ class InlineFormatTest extends Specification {
 
   def is = s2"""
 ${"Inline format".title}
-  ${textparts of a must be equalTo Seq("This is ", "red")}
-  ${textparts of b must be equalTo Seq("This is ", "red", " and this not")}
+  ${textParts of a must be equalTo Seq("This is ", "red")}
+  ${textParts of b must be equalTo Seq("This is ", "red", " and this not")}
     without a whitespace before "red"
-  ${textparts of c must be equalTo Seq("This is ", "red and this also")}
+  ${textParts of c must be equalTo Seq("This is ", "red and this also")}
   """
 }

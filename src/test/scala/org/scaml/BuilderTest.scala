@@ -14,13 +14,13 @@ class BuilderTest extends Specification {
 
   def children = TestCase.children
 
-  object textparts {
+  object textParts {
     def of(e: Element) = e.children.map(_.toText)
   }
 
   def is = s2"""
 ${"Builder".title}
   ${children must have length 2}
-  ${textparts of TestCase must be equalTo Seq("Paragraph 1", "Paragraph 2")}
+  ${textParts of TestCase must be equalTo Seq("Paragraph 1", "Paragraph 2")}
   """
 }

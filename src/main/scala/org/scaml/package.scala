@@ -1,19 +1,22 @@
 package org
 
-import language.implicitConversions
+import scala.language.implicitConversions
+import scala.util.DynamicVariable
 
 /**
  * Scaml is a tool to build documents in Scala.
  */
 package object scaml {
-  implicit def strToText(str: String): Text = Text(str)
+  private val _stringContext = new DynamicVariable[Option[StringContext]](None)
 
-  implicit def strsToTexts(strs: Seq[String]): Seq[Text] = strs.map(Text)
-
-  private val _stringContext = new util.DynamicVariable[Option[StringContext]](None)
   def stringContext: Option[StringContext] = _stringContext.value
-  def stringContext_=(cs: StringContext): Unit = {
-    _stringContext.value = Some(cs)
-  }
+
+  def stringContext_=(sc: StringContext): Unit =
+    _stringContext.value = Some(sc)
+
+  implicit def stringToText(str: String): Text = Text(str)
+
+  implicit def stringsToTexts(strings: Iterable[String]): Seq[Text] =
+    strings.to[Seq].map(Text)
 }
 

@@ -63,24 +63,24 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
     val head: Text = sc.parts.headOption getOrElse sys.error("Empty StringContext given")
 
     val tail: Seq[Node] = params zip sc.parts.tail flatMap {
-      // finde modifers with append a append group
-      case (m: Modifiers, text) if text.dropWhile(_.isWhitespace).headOption == Some('{') &&
+      // find modifiers with append a append group
+      case (m: Modifiers, text) if text.dropWhile(_.isWhitespace).startsWith("{") &&
         text.contains('}') =>
-        val formated =
+        val formatted =
           text.dropWhile(_.isWhitespace).tail.takeWhile(_ != '}')
         val unaffected =
           text.dropWhile(_ != '}').tail
         if (unaffected.isEmpty)
-          Seq(Text(formated) add m)
+          Seq(Text(formatted) add m)
         else
-          Seq(Text(formated) add m, Text(unaffected))
+          Seq(Text(formatted) add m, Text(unaffected))
       case (m: Modifiers, text) =>
-        val (formated, unaffected) =
+        val (formatted, unaffected) =
           text.dropWhile(_.isWhitespace).span(!_.isWhitespace)
         if (unaffected.isEmpty)
-          Seq(Text(formated) add m)
+          Seq(Text(formatted) add m)
         else
-          Seq(Text(formated) add m, Text(unaffected))
+          Seq(Text(formatted) add m, Text(unaffected))
       case (n: Node, text) =>
         Seq(n, Text(text))
       case (any, text) =>

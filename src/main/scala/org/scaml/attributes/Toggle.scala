@@ -9,11 +9,11 @@ import org.scaml.Attribute
 class Toggle(name: String) extends Attribute[Boolean](name) {
 
   /**
-   * Allows to write `+ $Name` instand of `$Name > true`.
+   * Allows to write `+ $Name` instant of `$Name > true`.
    */
   def unary_+ = this > true
   /**
-   * Allows to write `- $Name` instand of `$Name > false`.
+   * Allows to write `- $Name` instant of `$Name > false`.
    */
   def unary_- = this > false
 }

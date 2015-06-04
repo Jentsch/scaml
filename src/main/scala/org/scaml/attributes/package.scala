@@ -2,6 +2,9 @@ package org.scaml
 
 import java.net.URL
 
+/**
+ *  typesafe default attributes.
+ */
 package object attributes
   extends Breaks
   with Color.PreDefs
