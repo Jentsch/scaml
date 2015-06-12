@@ -1,33 +1,51 @@
 package org.scaml
 
+import scala.collection.mutable.ListBuffer
+
 /**
  * A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed
  * this way.
  */
-trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
+trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
 
   protected val modifiers: Seq[Modifier[_]]
 
   def iterator: Iterator[Modifier[_]] = modifiers.iterator
 
+  def isDefinedAt(attribute: Attribute[_]): Boolean =
+    get(attribute).isDefined
+
   // XXX: Is in O(n), should be O(log n)
   def get[T](attribute: Attribute[T]): Option[T] =
     modifiers.collectFirst { case attribute(t) => t }
 
-  def isDefinedAt(attribute: Attribute[_]): Boolean =
-    get(attribute).isDefined
-
+  /**
+   * Merges both modifiers. If a attribute is defined in `this` and `that`, the result will have the value of `that` for
+   * the attribute.
+   */
   def &(that: Modifiers): Modifiers =
     this ++ that
+
+
+  /**
+   * Merges both modifiers. If a attribute is defined in `this` and `that`, the result will have the value of `that` for
+   * the attribute.
+   */
+  def ++(that: Modifiers): Modifiers =
+    Modifiers(modifiers.filterNot { bind => that.attributes.contains(bind.attribute) } ++ that.modifiers)
+
+  /**
+   * Returns all attributes of this modifier.
+   */
+  def attributes: Set[Attribute[_]] = modifiers.map {
+    _.attribute
+  }.toSet
 
   override def filter(condition: Modifier[_] => Boolean): Modifiers =
     Modifiers(modifiers filter condition)
 
   override def filterNot(condition: Modifier[_] => Boolean): Modifiers =
     Modifiers(modifiers filterNot condition)
-
-  def ++(that: Modifiers): Modifiers =
-    Modifiers(modifiers.filterNot { bind => that.attributes.contains(bind.attribute) } ++ that.modifiers)
 
   /**
    * Binds attributes to a node a append the node to a builder.
@@ -40,11 +58,6 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
 
   def asMinorOf(that: Modifiers): BatchModifiers =
     BatchModifiers(that, this)
-
-  /**
-   * Returns all attributes of this modifier.
-   */
-  def attributes: Set[Attribute[_]] = modifiers.map { _.attribute }.toSet
 
   override def toString() = modifiers.mkString("Modifiers(", ", ", ")")
 
@@ -59,58 +72,47 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
    * }}}
    */
   def apply(params: Inlineable*)(implicit b: Builder): Element = {
-    val sc = stringContext getOrElse sys.error("No StringContext given")
-    val head: Text = sc.parts.headOption getOrElse sys.error("Empty StringContext given")
+    val parts = Builder.stringContext.getOrElse(sys.error("No string context given")).parts
 
-    val tail: Seq[Node] = params zip sc.parts.tail flatMap {
-      // find modifiers with append a append group
-      case (m: Modifiers, text) if text.dropWhile(_.isWhitespace).startsWith("{") &&
-        text.contains('}') =>
-        val formatted =
-          text.dropWhile(_.isWhitespace).tail.takeWhile(_ != '}')
-        val unaffected =
-          text.dropWhile(_ != '}').tail
-        if (unaffected.isEmpty)
-          Seq(Text(formatted) add m)
-        else
-          Seq(Text(formatted) add m, Text(unaffected))
-      case (m: Modifiers, text) =>
-        val (formatted, unaffected) =
-          text.dropWhile(_.isWhitespace).span(!_.isWhitespace)
-        if (unaffected.isEmpty)
-          Seq(Text(formatted) add m)
-        else
-          Seq(Text(formatted) add m, Text(unaffected))
-      case (n: Node, text) =>
-        Seq(n, Text(text))
-      case (any, text) =>
-        Seq(Text(any.toString), Text(text))
+    val content: List[Either[Inlineable, String]] =
+      rightLeft(params.toList, parts.toList)
+
+    var remaining: List[Either[Inlineable, String]] = content
+    val collected = ListBuffer.empty[Node]
+    while (remaining.nonEmpty) {
+      remaining match {
+        case Right("") +: rem =>
+          remaining = rem
+        case Right(text) +: rem =>
+          collected += text
+          remaining = rem
+        case Left(inlineable) +: rem =>
+          val (result, rem2) = inlineable.consume(rem)
+          collected += result
+          remaining = rem2
+      }
     }
+    val result = Element(collected.toList, this)
 
-    val list = (head +: tail).foldRight[List[Node]](Nil) {
-      case (Text(""), ls) => ls
-      case (Text(t1), Text(t2) :: ls) => Text(t1 + t2) :: ls
-      case (h, ls) => h :: ls
-    }
-
-    this | Element(list)
+    b.register(result)
+    result.asInstanceOf[Element]
   }
+
+  private def rightLeft[L, R](lefts: List[L], rights: Seq[R]): List[Either[L, R]] =
+    Right(rights.head) ::
+      lefts.zip(rights.tail).flatMap { case (param, part) => Left(param) :: Right(part) :: Nil }
+
+  override def wrap(input: List[Node]): Element =
+    Element(input, this)
 }
 
 object Modifiers {
+  val empty: Modifiers = Modifiers(List.empty)
+
   def apply(binds: Seq[Modifier[_]]): Modifiers = binds match {
     case Seq(single) => single
-    case _ => new Modifiers {
+    case _ => new Modifiers with CurlyInlineable {
       val modifiers = binds
     }
   }
-  
-  def unapply(modifiers: Modifiers): Option[(Modifier[_], Modifiers)] = modifiers.modifiers match {
-    case first +: rest =>
-      Some(first -> Modifiers(rest))
-    case _ =>
-      None
-  }
-
-  val empty: Modifiers = Modifiers(List.empty)
 }
