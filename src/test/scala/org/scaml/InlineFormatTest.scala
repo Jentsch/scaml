@@ -10,6 +10,8 @@ class InlineFormatTest extends Specification {
     val Red: Modifier[Color] = TextColor > red
     val Blue: Modifier[Color] = TextColor > blue
     val name = "Bob"
+    val note = (node: Node) =>
+      p">$node<"
 
     val a = p"Only text"
     val b = p"Hello $name"
@@ -20,6 +22,7 @@ class InlineFormatTest extends Specification {
     val g = p"This is $Red { red and this is $name}"
 
     val h = p"$p{This is deeply $p nested}"
+    val i = p"Some text $note {some other text}"
   }
 
   object textParts {
@@ -39,6 +42,7 @@ ${"Inline format".title}
   ${f must be equalTo Element(Seq("This is ", Element(Seq(" red and this is ", Element(Seq("blue"), Blue), ""), Red)))}
   ${g must be equalTo Element(Seq("This is ", Element(Seq(" red and this is ", "Bob", ""), Red)))}
   ${h must be equalTo Element(Seq(Element(Seq("This is deeply " , Element(Seq("nested")), ""))))}
+  ${i must be equalTo Element(Seq("Some text ", Element(Seq(">", Element(Seq("some other text")), "<"))))}
   """
 
 
