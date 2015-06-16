@@ -23,6 +23,8 @@ class InlineFormatTest extends Specification {
 
     val h = p"$p{This is deeply $p nested}"
     val i = p"Some text $note {some other text}"
+    val j = p"Some text $p $note {some other text}"
+    val k = p"Some $p"
   }
 
   object textParts {
@@ -43,6 +45,8 @@ ${"Inline format".title}
   ${g must be equalTo Element(Seq("This is ", Element(Seq(" red and this is ", "Bob", ""), Red)))}
   ${h must be equalTo Element(Seq(Element(Seq("This is deeply " , Element(Seq("nested")), ""))))}
   ${i must be equalTo Element(Seq("Some text ", Element(Seq(">", Element(Seq("some other text")), "<"))))}
+  ${j must be equalTo Element(Seq("Some text ", Element(Seq(Element(Seq(">", Element(Seq("some other text")), "<"))))))}
+  ${k must be equalTo Element(Seq("Some ", Element(Seq(""))))}
   """
 
 

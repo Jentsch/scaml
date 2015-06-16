@@ -35,16 +35,16 @@ trait CurlyInlineable extends Inlineable {
    * @return the result and the remaining input
    */
   override def consume(input: List[Either[Inlineable, String]]): (Node, List[Either[Inlineable, String]]) = input match {
-    case Left(child) :: input =>
-      val (childResult, remaining) = child.consume(input)
+    case Right(blank) :: Left(child) :: rest if blank forall (_.isWhitespace)=>
+      val (childResult, remaining) = child.consume(rest)
       wrap(List(childResult)) -> remaining
-    case Right(SingleWord(word, restText)) :: input =>
-      wrap(List(word)) -> (Right(restText) :: input)
+    case Right(SingleWord(word, restText)) :: rest =>
+      wrap(List(word)) -> (Right(restText) :: rest)
     case empty if empty.isEmpty =>
       wrap(Nil) -> Nil
-    case Right(start) :: input if start.trim.startsWith("{") =>
+    case Right(start) :: rest if start.trim.startsWith("{") =>
       val collected = ListBuffer.empty[Node]
-      var rem = Right(start.dropWhile(_.isWhitespace).drop(1)) :: input
+      var rem = Right(start.dropWhile(_.isWhitespace).drop(1)) :: rest
       while (rem.headOption.collect{case Right(end) if end.contains('}') => ()}.isEmpty) {
         rem match {
           case Left(child) :: input =>
