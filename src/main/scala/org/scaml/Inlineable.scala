@@ -25,7 +25,8 @@ trait Inlineable {
 }
 
 /**
- * Inlineable that everything in currly braces after it
+ * Inlineable that everything in curly braces after it or single 'word'.
+ * Words are groups if none whitespaces and none curly braces.
  */
 trait CurlyInlineable extends Inlineable {
   def wrap(input: List[Node]): Node
@@ -44,7 +45,6 @@ trait CurlyInlineable extends Inlineable {
     case Right(start) :: input if start.trim.startsWith("{") =>
       val collected = ListBuffer.empty[Node]
       var rem = Right(start.dropWhile(_.isWhitespace).drop(1)) :: input
-      var remainingText: String = ""
       while (rem.headOption.collect{case Right(end) if end.contains('}') => ()}.isEmpty) {
         rem match {
           case Left(child) :: input =>
@@ -70,7 +70,7 @@ trait CurlyInlineable extends Inlineable {
       if (leftTrimmed.startsWith("{")) {
         None
       } else {
-        Some(leftTrimmed.span(! _.isWhitespace))
+        Some(leftTrimmed.span(char => !char.isWhitespace && char != '}'))
       }
     }
   }
