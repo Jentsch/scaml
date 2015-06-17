@@ -7,14 +7,15 @@ trait Web extends General {
   /** Paragraph */
   override def p: Modifiers = Tag > "p"
 
+  override def headline: Modifiers = Modifiers.empty
   /**
    * Highest level of all headlines
    */
-  override def title: Modifiers = Tag > "h1"
+  override def title: Modifiers = headline & Tag > "h1"
 
-  override def chapter: Modifiers = Tag > "h2"
+  override def chapter: Modifiers = headline & Tag > "h2"
 
-  override def section: Modifiers = Tag > "h3"
+  override def section: Modifiers = headline & Tag > "h3"
 
   def header: Modifiers = Tag > "header"
 
