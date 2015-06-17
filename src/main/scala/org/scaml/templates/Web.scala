@@ -25,9 +25,21 @@ trait Web extends General {
    * {{{
    *   postForm("/register") | p"""
    *     $section {news letter}
-   *     $label E-Mail $input $br
+   *     $label E-Mail $textInput $br
    *     $button
    *   """
+   * }}}
+   *
+   * Or inlined
+   *
+   * {{{
+   *   p"""
+   *     ${postForm("/register)} {
+   *       $section {news letter}
+   *       $label E-Mail $textInput $br
+   *       $button Submit
+   *     }
+   * """
    * }}}
    *
    */
@@ -51,7 +63,9 @@ trait Web extends General {
 
   def strong: Modifiers = Tag > "strong"
 
-  def label: Modifiers = Tag > "label"
+  def label(`for`: String) =
+    Tag > "label" &
+      WebAttribute("for") > `for`
 
   def sup: Modifiers = Tag > "sup"
 
