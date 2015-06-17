@@ -18,6 +18,7 @@ package object attributes
   val TextAlign = new Attribute[String]("TextAlign")
 
   val TextColor = new Attribute[Color]("TextColor")
+  val BackgroundColor = new Attribute[Color]("BackgroundColor")
 
   /**
    *  Puts the first character of each word in uppercase.
