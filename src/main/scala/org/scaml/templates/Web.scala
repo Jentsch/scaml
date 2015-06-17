@@ -1,7 +1,7 @@
 package org.scaml.templates
 
-import org.scaml.{Element, Modifiers, Node}
 import org.scaml.attributes._
+import org.scaml.{Element, Modifiers, Node}
 
 trait Web extends General {
   /** Paragraph */
@@ -23,7 +23,7 @@ trait Web extends General {
   /**
    * Usage:
    * {{{
-   *   form | p"""
+   *   postForm("/register") | p"""
    *     $section {news letter}
    *     $label E-Mail $input $br
    *     $button
@@ -31,9 +31,17 @@ trait Web extends General {
    * }}}
    *
    */
-  def form: Modifiers = Tag > "form"
+  def postForm(action: String): Modifiers =
+    Tag > "form" &
+      WebAttribute("method") > "post" &
+      WebAttribute("action") > action
 
-  def input: Modifiers = Tag > "input"
+  def textInput(name: String, length: Int = 10): Element =
+    Element(Nil,
+      Tag > "input" &
+        WebAttribute("name") > name &
+        WebAttribute("length") > length
+    )
 
   def button: Modifiers = Tag > "button"
 

@@ -26,8 +26,9 @@ package org.scaml
 case class Modifier[T](attribute: Attribute[T], value: T)
   extends Modifiers {
 
+  type Value = T
+
   protected val modifiers = List(this)
 
   override def toString() = attribute.toString + "> " + value.toString
 }
-

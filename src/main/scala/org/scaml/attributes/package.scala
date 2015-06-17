@@ -10,7 +10,7 @@ package object attributes
   with Color.PreDefs
   with Display {
 
-  object Link extends Attribute[String]("Link") {
+  object Link extends WebAttribute[String]("href") {
     def >(url: URL): Modifier[String] =
       this > url.toString
   }
