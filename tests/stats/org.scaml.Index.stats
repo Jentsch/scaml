@@ -1,9 +1,9 @@
-<org.scaml.Index-results timestamp="1434569380240"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-682587753"><stats pending="1" expectations="1" examples="1"></stats></result>
+<org.scaml.Index-results timestamp="1434570940554"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
-<org.scaml.Index-stats timestamp="1434569380246"><stats pending="1" time="2" expectations="1" examples="1"></stats></org.scaml.Index-stats>
-<org.scaml.Index-results timestamp="1434569404445"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<org.scaml.Index-stats timestamp="1434570940561"><stats pending="1" time="17" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-results timestamp="1434570967006"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
-<org.scaml.Index-stats timestamp="1434569404458"><stats pending="1" time="3" expectations="1" examples="1"></stats></org.scaml.Index-stats>
-<org.scaml.Index-results timestamp="1434569513708"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" expectations="1" examples="1"></stats></result>
+<org.scaml.Index-stats timestamp="1434570967019"><stats pending="1" time="3" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-results timestamp="1434571066079"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
-<org.scaml.Index-stats timestamp="1434569513736"><stats pending="1" time="3" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-stats timestamp="1434571066109"><stats pending="1" time="2" expectations="1" examples="1"></stats></org.scaml.Index-stats>
