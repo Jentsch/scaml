@@ -49,7 +49,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A document annotated with this trait will be runnable.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A document annotated has a main-method which will create a local HTML-file.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/templates/Run.scala" target="_blank">Run.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.App">App</span>, <span class="extype" name="scala.DelayedInit">DelayedInit</span>, <a href="General.html" class="extype" name="org.scaml.templates.General">General</a>, <a href="../Builder.html" class="extype" name="org.scaml.Builder">Builder</a>, <a href="../Element.html" class="extype" name="org.scaml.Element">Element</a>, <a href="../Node.html" class="extype" name="org.scaml.Node">Node</a>, <a href="../Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -301,6 +301,24 @@ wrapped by a element node with the modifiers.
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="org.scaml.Node#consume" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="consume(input:List[Either[org.scaml.Inlineable,String]]):(org.scaml.Node,List[Either[org.scaml.Inlineable,String]])"></a>
+      <a id="consume(List[Either[Inlineable,String]]):(Node,List[Either[Inlineable,String]])"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">consume</span><span class="params">(<span name="input">input: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Either">Either</span>[<a href="../Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result">: (<a href="../Node.html" class="extype" name="org.scaml.Node">Node</a>, <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Either">Either</span>[<a href="../Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.Predef.String">String</span>]])</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.scaml.templates.Run@consume(input:List[Either[org.scaml.Inlineable,String]]):(org.scaml.Node,List[Either[org.scaml.Inlineable,String]])" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result and the remaining input
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Node.html" class="extype" name="org.scaml.Node">Node</a> → <a href="../Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a></dd></dl></div>
     </li><li name="org.scaml.templates.General#em" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="em:org.scaml.Modifiers"></a>
       <a id="em:Modifiers"></a>
@@ -317,7 +335,7 @@ wrapped by a element node with the modifiers.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="General.html" class="extype" name="org.scaml.templates.General">General</a></dd></dl></div>
+      <p class="shortcomment cmt">Emphasis text</p><div class="fullcomment"><div class="comment cmt"><p>Emphasis text</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="General.html" class="extype" name="org.scaml.templates.General">General</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -335,23 +353,23 @@ wrapped by a element node with the modifiers.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(x$1:Any):Boolean"></a>
+    </li><li name="org.scaml.Element#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(obj:Any):Boolean"></a>
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">equals</span><span class="params">(<span name="obj">obj: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.templates.Run@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.templates.Run@equals(obj:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Element.html" class="extype" name="org.scaml.Element">Element</a> → AnyRef → Any</dd></dl></div>
     </li><li name="scala.App#executionStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="executionStart:Long"></a>
       <a id="executionStart:Long"></a>
@@ -409,12 +427,12 @@ wrapped by a element node with the modifiers.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.scaml.Element#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -425,7 +443,7 @@ wrapped by a element node with the modifiers.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Element.html" class="extype" name="org.scaml.Element">Element</a> → AnyRef → Any</dd></dl></div>
     </li><li name="org.scaml.templates.General#headline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="headline:org.scaml.Modifiers"></a>
       <a id="headline:Modifiers"></a>
@@ -460,23 +478,6 @@ wrapped by a element node with the modifiers.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.scaml.templates.General#list" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="list:org.scaml.BatchModifiers"></a>
-      <a id="list:BatchModifiers"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">list</span><span class="result">: <a href="../BatchModifiers.html" class="extype" name="org.scaml.BatchModifiers">BatchModifiers</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.templates.Run@list:org.scaml.BatchModifiers" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="General.html" class="extype" name="org.scaml.templates.General">General</a></dd></dl></div>
     </li><li name="org.scaml.templates.Run#main" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="main(params:Array[String]):Unit"></a>
       <a id="main(Array[String]):Unit"></a>

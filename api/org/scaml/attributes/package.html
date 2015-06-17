@@ -47,7 +47,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/attributes/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p> typesafe default attributes.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/attributes/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="org.scaml.attributes.Display">Display</span>, <span class="extype" name="org.scaml.attributes.Color.PreDefs">PreDefs</span>, <a href="Breaks.html" class="extype" name="org.scaml.attributes.Breaks">Breaks</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -176,36 +177,19 @@
       </a>
     </span>
       
-    </li><li name="org.scaml.attributes.Lang" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="LangextendsAnyRef"></a>
-      <a id="Lang:Lang"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Lang.html"><span class="name">Lang</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@LangextendsAnyRef" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.attributes.RichDouble" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RichDoubleextendsAnyRef"></a>
-      <a id="RichDouble:RichDouble"></a>
+    </li><li name="org.scaml.attributes.RichInt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichIntextendsAnyRef"></a>
+      <a id="RichInt:RichInt"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$RichDouble.html"><span class="name">RichDouble</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="package$$RichInt.html"><span class="name">RichInt</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@RichDoubleextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.package@RichIntextendsAnyRef" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -228,7 +212,7 @@
     </span>
       
     </li><li name="org.scaml.attributes.Toggle" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Toggleextendsattributes.Attribute[Boolean]"></a>
+      <a id="ToggleextendsAttribute[Boolean]"></a>
       <a id="Toggle:Toggle"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -236,15 +220,37 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Toggle.html"><span class="name">Toggle</span></a><span class="result"> extends <span class="extype" name="org.scaml.attributes.Attribute">Attribute</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <a href="Toggle.html"><span class="name">Toggle</span></a><span class="result"> extends <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@Toggleextendsattributes.Attribute[Boolean]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.package@ToggleextendsAttribute[Boolean]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Add unary + and - prefixes operators for boolean annotations.</p><div class="fullcomment"><div class="comment cmt"><p>Add unary + and - prefixes operators for boolean annotations. See 'Known Subclasses' below for
-examples.</p></div></div>
+      <p class="shortcomment cmt">Adds unary + and - prefixes operators for boolean attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Adds unary + and - prefixes operators for boolean attributes. See 'Known Subclasses' below for
+examples.
+</p></div></div>
+    </li><li name="org.scaml.attributes.WebAttribute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WebAttribute[V]extendsAttribute[V]"></a>
+      <a id="WebAttribute[V]:WebAttribute[V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WebAttribute.html"><span class="name">WebAttribute</span></a><span class="tparams">[<span name="V">V</span>]</span><span class="result"> extends <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="org.scaml.attributes.WebAttribute.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.scaml.attributes.package@WebAttribute[V]extendsAttribute[V]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Directly interpreted as parameter name and value by the <a href="../HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Directly interpreted as parameter name and value by the <a href="../HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>. Equality base upon the
+name. If the type <code>T</code> requires a specific conversion to be represented as string override the <code>stringRepresentation</code>
+method.
+</p></div><dl class="paramcmts block"><dt class="tparam">V</dt><dd class="cmt"><p>required type of the value
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -252,16 +258,33 @@ examples.</p></div></div>
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.scaml.attributes.Breaks#BreakAfter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="BreakAfter:org.scaml.Attribute[Breaks.this.Break]"></a>
-      <a id="BreakAfter:scaml.Attribute[Break]"></a>
+              <ol><li name="org.scaml.attributes#BackgroundColor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BackgroundColor:org.scaml.Attribute[org.scaml.attributes.Color]"></a>
+      <a id="BackgroundColor:Attribute[Color]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">BreakAfter</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Breaks$Break.html" class="extype" name="org.scaml.attributes.Breaks.Break">Break</a>]</span>
+        <span class="name">BackgroundColor</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Color.html" class="extype" name="org.scaml.attributes.Color">Color</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.scaml.attributes.package@BackgroundColor:org.scaml.Attribute[org.scaml.attributes.Color]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.attributes.Breaks#BreakAfter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BreakAfter:org.scaml.Attribute[Breaks.this.Break]"></a>
+      <a id="BreakAfter:Attribute[Break]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BreakAfter</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Breaks$Break.html" class="extype" name="org.scaml.attributes.Breaks.Break">Break</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@BreakAfter:org.scaml.Attribute[Breaks.this.Break]" title="Permalink" target="_top">
@@ -271,14 +294,14 @@ examples.</p></div></div>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Breaks.html" class="extype" name="org.scaml.attributes.Breaks">Breaks</a></dd></dl></div>
     </li><li name="org.scaml.attributes.Breaks#BreakBefore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="BreakBefore:org.scaml.Attribute[Breaks.this.Break]"></a>
-      <a id="BreakBefore:scaml.Attribute[Break]"></a>
+      <a id="BreakBefore:Attribute[Break]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">BreakBefore</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Breaks$Break.html" class="extype" name="org.scaml.attributes.Breaks.Break">Break</a>]</span>
+        <span class="name">BreakBefore</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Breaks$Break.html" class="extype" name="org.scaml.attributes.Breaks.Break">Break</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@BreakBefore:org.scaml.Attribute[Breaks.this.Break]" title="Permalink" target="_top">
@@ -288,14 +311,14 @@ examples.</p></div></div>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Breaks.html" class="extype" name="org.scaml.attributes.Breaks">Breaks</a></dd></dl></div>
     </li><li name="org.scaml.attributes.Display#Display" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Display:org.scaml.Attribute[Display.this.DisplayKind]"></a>
-      <a id="Display:scaml.Attribute[DisplayKind]"></a>
+      <a id="Display:Attribute[DisplayKind]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">Display</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="org.scaml.attributes.Display.DisplayKind">DisplayKind</span>]</span>
+        <span class="name">Display</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="org.scaml.attributes.Display.DisplayKind">DisplayKind</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@Display:org.scaml.Attribute[Display.this.DisplayKind]" title="Permalink" target="_top">
@@ -323,14 +346,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#FontFamily" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FontFamily:org.scaml.Attribute[String]"></a>
-      <a id="FontFamily:scaml.Attribute[String]"></a>
+      <a id="FontFamily:Attribute[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">FontFamily</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">FontFamily</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@FontFamily:org.scaml.Attribute[String]" title="Permalink" target="_top">
@@ -340,14 +363,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#FontSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FontSize:org.scaml.Attribute[org.scaml.attributes.Distance]"></a>
-      <a id="FontSize:scaml.Attribute[Distance]"></a>
+      <a id="FontSize:Attribute[Distance]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">FontSize</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
+        <span class="name">FontSize</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@FontSize:org.scaml.Attribute[org.scaml.attributes.Distance]" title="Permalink" target="_top">
@@ -357,14 +380,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#FontWeight" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FontWeight:org.scaml.Attribute[Int]"></a>
-      <a id="FontWeight:scaml.Attribute[Int]"></a>
+      <a id="FontWeight:Attribute[Int]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">FontWeight</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">FontWeight</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@FontWeight:org.scaml.Attribute[Int]" title="Permalink" target="_top">
@@ -372,33 +395,16 @@ examples.</p></div></div>
       </a>
     </span>
       <p class="shortcomment cmt">Weight of the font as specified in TrueType between 100 and 900.</p>
-    </li><li name="org.scaml.attributes#Hyphen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Hyphen:org.scaml.Processor[org.scaml.attributes.Lang]"></a>
-      <a id="Hyphen:Processor[Lang]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">Hyphen</span><span class="result">: <a href="../Processor.html" class="extype" name="org.scaml.Processor">Processor</a>[<a href="Lang.html" class="extype" name="org.scaml.attributes.Lang">Lang</a>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@Hyphen:org.scaml.Processor[org.scaml.attributes.Lang]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
     </li><li name="org.scaml.attributes#LineHeight" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LineHeight:org.scaml.Attribute[Int]"></a>
-      <a id="LineHeight:scaml.Attribute[Int]"></a>
+      <a id="LineHeight:Attribute[Int]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">LineHeight</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">LineHeight</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@LineHeight:org.scaml.Attribute[Int]" title="Permalink" target="_top">
@@ -415,7 +421,7 @@ examples.</p></div></div>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="package$$Link$.html"><span class="name">Link</span></a><span class="result"> extends <span class="extype" name="org.scaml.attributes.Attribute">Attribute</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <a href="package$$Link$.html"><span class="name">Link</span></a><span class="result"> extends <a href="WebAttribute.html" class="extype" name="org.scaml.attributes.WebAttribute">WebAttribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@Link" title="Permalink" target="_top">
@@ -423,33 +429,16 @@ examples.</p></div></div>
       </a>
     </span>
       
-    </li><li name="org.scaml.attributes#PreText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="PreText:org.scaml.Processor[String]"></a>
-      <a id="PreText:Processor[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">PreText</span><span class="result">: <a href="../Processor.html" class="extype" name="org.scaml.Processor">Processor</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@PreText:org.scaml.Processor[String]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
     </li><li name="org.scaml.attributes#SpaceAfter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SpaceAfter:org.scaml.Attribute[org.scaml.attributes.Distance]"></a>
-      <a id="SpaceAfter:scaml.Attribute[Distance]"></a>
+      <a id="SpaceAfter:Attribute[Distance]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">SpaceAfter</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
+        <span class="name">SpaceAfter</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@SpaceAfter:org.scaml.Attribute[org.scaml.attributes.Distance]" title="Permalink" target="_top">
@@ -459,14 +448,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#SpaceBefore" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SpaceBefore:org.scaml.Attribute[org.scaml.attributes.Distance]"></a>
-      <a id="SpaceBefore:scaml.Attribute[Distance]"></a>
+      <a id="SpaceBefore:Attribute[Distance]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">SpaceBefore</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
+        <span class="name">SpaceBefore</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Distance.html" class="extype" name="org.scaml.attributes.Distance">Distance</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@SpaceBefore:org.scaml.Attribute[org.scaml.attributes.Distance]" title="Permalink" target="_top">
@@ -476,14 +465,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#Tag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Tag:org.scaml.Attribute[String]"></a>
-      <a id="Tag:scaml.Attribute[String]"></a>
+      <a id="Tag:Attribute[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">Tag</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">Tag</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@Tag:org.scaml.Attribute[String]" title="Permalink" target="_top">
@@ -493,14 +482,14 @@ examples.</p></div></div>
       <p class="shortcomment cmt">Only for Web documents</p>
     </li><li name="org.scaml.attributes#TextAlign" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextAlign:org.scaml.Attribute[String]"></a>
-      <a id="TextAlign:scaml.Attribute[String]"></a>
+      <a id="TextAlign:Attribute[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">TextAlign</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">TextAlign</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@TextAlign:org.scaml.Attribute[String]" title="Permalink" target="_top">
@@ -527,14 +516,14 @@ examples.</p></div></div>
       <p class="shortcomment cmt">May not supported by all generators.</p>
     </li><li name="org.scaml.attributes#TextColor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextColor:org.scaml.Attribute[org.scaml.attributes.Color]"></a>
-      <a id="TextColor:scaml.Attribute[Color]"></a>
+      <a id="TextColor:Attribute[Color]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">TextColor</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="Color.html" class="extype" name="org.scaml.attributes.Color">Color</a>]</span>
+        <span class="name">TextColor</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="Color.html" class="extype" name="org.scaml.attributes.Color">Color</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@TextColor:org.scaml.Attribute[org.scaml.attributes.Color]" title="Permalink" target="_top">
@@ -578,14 +567,14 @@ examples.</p></div></div>
       
     </li><li name="org.scaml.attributes#TextTransform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextTransform:org.scaml.Attribute[org.scaml.attributes.TextTransform]"></a>
-      <a id="TextTransform:scaml.Attribute[TextTransform]"></a>
+      <a id="TextTransform:Attribute[TextTransform]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">TextTransform</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">scaml.Attribute</a>[<a href="TextTransform.html" class="extype" name="org.scaml.attributes.TextTransform">TextTransform</a>]</span>
+        <span class="name">TextTransform</span><span class="result">: <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<a href="TextTransform.html" class="extype" name="org.scaml.attributes.TextTransform">TextTransform</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@TextTransform:org.scaml.Attribute[org.scaml.attributes.TextTransform]" title="Permalink" target="_top">
@@ -606,6 +595,23 @@ examples.</p></div></div>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@TextUnderline:org.scaml.attributes.Toggle" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.attributes.WebAttribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WebAttribute"></a>
+      <a id="WebAttribute:WebAttribute"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WebAttribute$.html"><span class="name">WebAttribute</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.scaml.attributes.package@WebAttribute" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -772,40 +778,6 @@ only place in other block elements.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Breaks.html" class="extype" name="org.scaml.attributes.Breaks">Breaks</a></dd></dl></div>
-    </li><li name="org.scaml.attributes.de" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="de"></a>
-      <a id="de:de"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="de$.html"><span class="name">de</span></a><span class="result"> extends <a href="Lang.html" class="extype" name="org.scaml.attributes.Lang">Lang</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@de" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.attributes.en" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="en"></a>
-      <a id="en:en"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="en$.html"><span class="name">en</span></a><span class="result"> extends <a href="Lang.html" class="extype" name="org.scaml.attributes.Lang">Lang</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@en" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
     </li><li name="org.scaml.attributes.Color.PreDefs#fuchsia" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="fuchsia:org.scaml.attributes.Color"></a>
       <a id="fuchsia:Color"></a>

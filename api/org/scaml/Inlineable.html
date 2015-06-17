@@ -49,13 +49,18 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Marker trait for everything that could be used inline
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait for everything that could be used inside a StringContext. E.g</p><pre><span class="kw">val</span> colorName = <span class="lit">"blue"</span>
+
+p<span class="lit">"The color $blue looks like ${TextColor > blue}{this}"</span></pre><p>Create implicit conversions for every class the should be usable within a StringContext. String allready has an
+implicit conversion to a [Text] [Node]
+Note the String could be implicitly converted to text node. Inlineables like <a href="Modifier.html" class="extype" name="org.scaml.Modifier">org.scaml.Modifier</a> or functions
+affecting the content after it.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/Inlineable.scala" target="_blank">Inlineable.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">Known Subclasses</span>
-            <div class="subClasses hiddenContent"><a href="BatchModifiers$$BatchElement.html" class="extype" name="org.scaml.BatchModifiers.BatchElement">BatchElement</a>, <a href="Builder.html" class="extype" name="org.scaml.Builder">Builder</a>, <a href="Element.html" class="extype" name="org.scaml.Element">Element</a>, <a href="templates/General.html" class="extype" name="org.scaml.templates.General">General</a>, <a href="Graphic.html" class="extype" name="org.scaml.Graphic">Graphic</a>, <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>, <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a>, <a href="Node.html" class="extype" name="org.scaml.Node">Node</a>, <a href="templates/Presentation.html" class="extype" name="org.scaml.templates.Presentation">Presentation</a>, <a href="templates/Run.html" class="extype" name="org.scaml.templates.Run">Run</a>, <a href="Text.html" class="extype" name="org.scaml.Text">Text</a>, <a href="templates/Web.html" class="extype" name="org.scaml.templates.Web">Web</a></div>
+            <div class="subClasses hiddenContent"><a href="BatchModifiers$$BatchElement.html" class="extype" name="org.scaml.BatchModifiers.BatchElement">BatchElement</a>, <a href="Builder.html" class="extype" name="org.scaml.Builder">Builder</a>, <a href="CurlyInlineable.html" class="extype" name="org.scaml.CurlyInlineable">CurlyInlineable</a>, <a href="Element.html" class="extype" name="org.scaml.Element">Element</a>, <a href="templates/General.html" class="extype" name="org.scaml.templates.General">General</a>, <a href="Graphic.html" class="extype" name="org.scaml.Graphic">Graphic</a>, <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>, <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a>, <a href="Node.html" class="extype" name="org.scaml.Node">Node</a>, <a href="templates/Presentation.html" class="extype" name="org.scaml.templates.Presentation">Presentation</a>, <a href="templates/Run.html" class="extype" name="org.scaml.templates.Run">Run</a>, <a href="Text.html" class="extype" name="org.scaml.Text">Text</a>, <a href="templates/Web.html" class="extype" name="org.scaml.templates.Web">Web</a></div>
           </div></div>
         
 
@@ -95,10 +100,31 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="org.scaml.Inlineable#consume" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="consume(input:List[Either[org.scaml.Inlineable,String]]):(org.scaml.Node,List[Either[org.scaml.Inlineable,String]])"></a>
+      <a id="consume(List[Either[Inlineable,String]]):(Node,List[Either[Inlineable,String]])"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">consume</span><span class="params">(<span name="input">input: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Either">Either</span>[<a href="" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result">: (<a href="Node.html" class="extype" name="org.scaml.Node">Node</a>, <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Either">Either</span>[<a href="" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.Predef.String">String</span>]])</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.Inlineable@consume(input:List[Either[org.scaml.Inlineable,String]]):(org.scaml.Node,List[Either[org.scaml.Inlineable,String]])" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result and the remaining input
+</p></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
