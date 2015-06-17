@@ -13,8 +13,8 @@ import scala.collection.mutable.ListBuffer
  *
  * Create implicit conversions for every class the should be usable within a StringContext. String allready has an
  * implicit conversion to a [Text] [Node]
- * Note the String could be implicitly converted to text node. Inlinesables like [[org.scaml.Modifier]] affecting the
- * content after it.
+ * Note the String could be implicitly converted to text node. Inlineables like [[org.scaml.Modifier]] or functions
+ * affecting the content after it.
  */
 trait Inlineable {
 
@@ -45,7 +45,7 @@ trait CurlyInlineable extends Inlineable {
     case Right(start) :: rest if start.trim.startsWith("{") =>
       val collected = ListBuffer.empty[Node]
       var rem = Right(start.dropWhile(_.isWhitespace).drop(1)) :: rest
-      while (rem.headOption.collect{case Right(end) if end.contains('}') => ()}.isEmpty) {
+      while (rem.nonEmpty && rem.headOption.collect{case Right(end) if end.contains('}') => ()}.isEmpty) {
         rem match {
           case Left(child) :: input =>
             val (childResult, rem2) = child.consume(input)
