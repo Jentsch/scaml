@@ -4,9 +4,10 @@ import org.scaml.attributes._
 
 trait WebElements {
   /** Paragraph */
-  def p: Modifiers = Tag > "p"
+  val p: Modifiers = Tag > "p"
 
-  def headline: Modifiers = Modifiers.empty
+  protected val headline: Modifiers = Modifiers.empty
+  
   /**
    * Highest level of all headlines
    */
@@ -16,9 +17,9 @@ trait WebElements {
 
   def section: Modifiers = headline & Tag > "h3"
 
-  def header: Modifiers = Tag > "header"
+  val header: Modifiers = Tag > "header"
 
-  def footer: Modifiers = Tag > "footer"
+  val footer: Modifiers = Tag > "footer"
 
   /**
    * Usage:
@@ -47,27 +48,27 @@ trait WebElements {
 
   def button: Modifiers = Tag > "button"
 
-  def br: Node = Element(Nil, Tag > "br")
+  val br: Node = Element(Nil, Tag > "br")
 
-  def em: Modifiers = Tag > "em"
+  val em: Modifiers = Tag > "em"
 
-  def strong: Modifiers = Tag > "strong"
+  val strong: Modifiers = Tag > "strong"
 
   def label(`for`: String) =
     Tag > "label" &
       WebAttribute("for") > `for`
 
-  def sup: Modifiers = Tag > "sup"
+  val sup: Modifiers = Tag > "sup"
 
-  def sub: Modifiers = Tag > "sub"
+  val sub: Modifiers = Tag > "sub"
 
-  def unorderedList = Tag > "ul"
+  val unorderedList = Tag > "ul"
 
   def image(url: String) =
     Tag > "img" &
       WebAttribute("src") > url
 
-  def item = Tag > "li"
+  val item = Tag > "li"
 }
 
 /**
