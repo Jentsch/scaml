@@ -16,7 +16,7 @@ package object scaml {
    *
    * Example:
    * {{{
-   *   ml"A $bold link ${link > "wikipedia.org"}{to wikipedia}."
+   *   ml"A $bold link ${Link > "wikipedia.org"}{to wikipedia}."
    * }}}
    */
   implicit class ML(sc: StringContext) {

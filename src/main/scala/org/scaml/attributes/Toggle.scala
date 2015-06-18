@@ -5,6 +5,9 @@ import org.scaml.Attribute
 /**
  * Adds unary + and - prefixes operators for boolean attributes. See 'Known Subclasses' below for
  * examples.
+ *
+ * @define name toggle
+ * @define Name Toggle
  */
 class Toggle(name: String) extends Attribute[Boolean](name) {
 

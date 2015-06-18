@@ -10,5 +10,8 @@ package org.scaml.attributes
  *     this   collapse to singe    spaces
  *   """
  * }}}
+ *
+ * @define name white space collapse
+ * @define Name WhiteSpaceCollapse
  */
 object WhiteSpaceCollapse extends Toggle("WhiteSpaceCollapse")

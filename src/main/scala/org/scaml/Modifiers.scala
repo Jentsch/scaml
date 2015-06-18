@@ -1,8 +1,7 @@
 package org.scaml
 
 /**
- * A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed
- * this way.
+ * A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed this way.
  */
 trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
 
@@ -53,7 +52,7 @@ trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
 object Modifiers {
   val empty: Modifiers = Modifiers(List.empty)
 
-  def apply(binds: Seq[Modifier[_]]): Modifiers = binds match {
+  private[Modifiers] def apply(binds: Seq[Modifier[_]]): Modifiers = binds match {
     case Seq(single) => single
     case _ => new Modifiers with CurlyInlineable {
       val modifiers = binds

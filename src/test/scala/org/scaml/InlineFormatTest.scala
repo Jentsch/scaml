@@ -46,7 +46,7 @@ ${"Inline format".title}
   ${j must be equalTo Element(Seq("Some text ", Element(Seq(Element(Seq(">", Element(Seq("some other text")), "<"))))))}
   ${k must be equalTo Element(Seq("Some ", Element(Seq(""))))}
   ${ml"$q { left open" should throwAn[RuntimeException](".*missing.*")}
-  ${ml"${List(1, 2)}".toText must be equalTo "1 2"}
+  ${ml"${List(1, 2)}".toText must be equalTo "12"}
   """
 
 

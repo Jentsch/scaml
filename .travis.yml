@@ -1,7 +1,6 @@
 language: scala
 script:
   - sbt clean +test
-  - sbt "project example" "run"
 
   # Tricks to avoid unnecessary cache updates
   - find $HOME/.sbt -name "*.lock" | xargs rm

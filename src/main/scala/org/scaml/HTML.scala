@@ -2,13 +2,12 @@ package org.scaml
 
 import org.scaml.attributes._
 
-import scala.xml.{Elem => XElem, MetaData, NamespaceBinding, Node => XNode, Null, Text => XText, UnprefixedAttribute}
+import scala.xml.{Elem => XElem, MetaData, Node => XNode, Null, Text => XText, TopScope, UnprefixedAttribute}
 
+/**
+ * Converts ScaML documents into HTML.
+ */
 object HTML {
-  private val nameSpace: NamespaceBinding = scala.xml.TopScope
-
-  val noSemantic = Set("div", "span")
-
   def apply(document: Node): XNode = {
     def body(node: XNode): XNode = node match {
       case XElem(_, _, Null, _, child: XElem) =>
@@ -32,12 +31,12 @@ object HTML {
     case Element(children, modifiers) =>
       val childrenContent = children map content
       val attrs: Map[String, String] = {
-        val styleMods = modifiers.filterNot(_.attribute.isInstanceOf[WebAttribute[_]])
         val webModifiers = modifiers.collect { case web if web.attribute.isInstanceOf[WebAttribute[_]] =>
           val Modifier(attribute: WebAttribute[_], value) = web
           attribute.name -> attribute.stringRepresentation(value.asInstanceOf[attribute.Value])
         }
-        Map("style" -> style(styleModifiers(styleMods))).filterNot(_._2.isEmpty) ++ webModifiers
+
+        Map("style" -> style(styleModifiers(modifiers))).filterNot(_._2.isEmpty) ++ webModifiers
       }
 
       modifiers.get(Link) match {
@@ -54,7 +53,7 @@ object HTML {
       case (coll, (key, value)) => new UnprefixedAttribute(key, value, coll)
     }
 
-    XElem(null, name, meta, nameSpace, true, children: _*)
+    XElem(null, name, meta, TopScope, true, children: _*)
   }
 
   private def style(modifiers: Modifiers): String =
@@ -85,10 +84,15 @@ object HTML {
         r + lower
     }
 
-
   private def styleModifiers(modifiers: Modifiers) =
-    modifiers.filterNot { case Modifier(attribute, _) => isIgnoredAttribute(attribute) }
+    modifiers.filter {
+      case Modifier(_: WebAttribute[_], _) => false
+      case Modifier(attribute, _) => !isIgnoredAttribute(attribute)
+    }
 
   private val isIgnoredAttribute: Set[Attribute[_]] = Set(Tag)
+
+  private val noSemantic = Set("div", "span")
+
 }
 

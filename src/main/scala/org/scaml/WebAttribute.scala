@@ -1,6 +1,4 @@
-package org.scaml.attributes
-
-import org.scaml.Attribute
+package org.scaml
 
 /**
  * Directly interpreted as parameter name and value by the [[org.scaml.HTML HTML generator]]. Equality base upon the
@@ -10,23 +8,9 @@ import org.scaml.Attribute
  * @param name used by the HTML generator as key
  * @tparam V required type of the value
  */
-class WebAttribute[V](name: String) extends Attribute[V](name) {
+protected[scaml] case class WebAttribute[V](override val name: String) extends Attribute[V](name) {
   type Value = V
 
   def stringRepresentation(value: V) =
     value.toString
-
-  override def equals(obj: Any): Boolean = obj match {
-    case that: WebAttribute[_] =>
-      this.name == that.name
-    case _ =>
-      false
-  }
-
-  override def hashCode(): Int = name.hashCode * 47
-}
-
-object WebAttribute {
-  def apply[V](name: String) =
-    new WebAttribute[V](name)
 }

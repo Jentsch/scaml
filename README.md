@@ -10,8 +10,8 @@ How to use?
 With the import of org.scaml._ a new syntax is available:
 
 ```scala
-import org.scaml._       // Basic syntax
-import org.WebTemplate._ // Allows HTML constructs
+import org.scaml._              // Basic syntax
+import org.scaml.WebTemplate._  // Allows HTML constructs
 
 object Main extends App {
   val page = ml"""
@@ -21,8 +21,8 @@ object Main extends App {
     }
   """
 
-  val html = HTML(page)  // converts the page into HTML (using scala.xml)
-  println(html)    // prints the generated page to stdout
+  val html = HTML(page)         // converts the page into HTML (using scala.xml)
+  println(html)                 // prints the generated page to stdout
 }
 ```
 
@@ -33,7 +33,7 @@ Dependencies
 
 Add following lines to your `build.sbt`
 ```sbt
-libraryDependencies += "org.scaml" %% "scaml" % "0.2.1.17"
+libraryDependencies += "org.scaml" %% "scaml" % "0.3.0.19"
 resolvers += "ScaML Bintray Repo" at "https://bintray.com/artifact/download/jentsch/maven/"
 ```
 

@@ -66,4 +66,7 @@ trait WebElements {
   def item = Tag > "li"
 }
 
+/**
+ * Basic
+ */
 object WebElements extends WebElements
