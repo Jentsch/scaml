@@ -1,21 +1,20 @@
-package org.scaml.templates
+package org.scaml
 
 import org.scaml.attributes._
-import org.scaml.{Element, Modifiers, Node}
 
-trait Web extends General {
+trait WebElements {
   /** Paragraph */
-  override def p: Modifiers = Tag > "p"
+  def p: Modifiers = Tag > "p"
 
-  override def headline: Modifiers = Modifiers.empty
+  def headline: Modifiers = Modifiers.empty
   /**
    * Highest level of all headlines
    */
-  override def title: Modifiers = headline & Tag > "h1"
+  def title: Modifiers = headline & Tag > "h1"
 
-  override def chapter: Modifiers = headline & Tag > "h2"
+  def chapter: Modifiers = headline & Tag > "h2"
 
-  override def section: Modifiers = headline & Tag > "h3"
+  def section: Modifiers = headline & Tag > "h3"
 
   def header: Modifiers = Tag > "header"
 
@@ -23,16 +22,6 @@ trait Web extends General {
 
   /**
    * Usage:
-   * {{{
-   *   postForm("/register") | p"""
-   *     $section {news letter}
-   *     $label E-Mail $textInput $br
-   *     $button
-   *   """
-   * }}}
-   *
-   * Or inlined
-   *
    * {{{
    *   p"""
    *     ${postForm("/register)} {
@@ -60,7 +49,7 @@ trait Web extends General {
 
   def br: Node = Element(Nil, Tag > "br")
 
-  override def em: Modifiers = Tag > "em"
+  def em: Modifiers = Tag > "em"
 
   def strong: Modifiers = Tag > "strong"
 
@@ -72,7 +61,9 @@ trait Web extends General {
 
   def sub: Modifiers = Tag > "sub"
 
+  def unorderedList = Tag > "ul"
 
-  def list =
-    Tag > "li" asMinorOf Tag > "ul"
+  def item = Tag > "li"
 }
+
+object WebElements extends WebElements

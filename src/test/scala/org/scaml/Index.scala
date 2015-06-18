@@ -7,10 +7,9 @@ class Index extends Specification {
 def is = s2"""
   ${"Test Results".title urlIs "index.html"}
 ### Core
-  ${see(new BuilderTest)}
-  ${see(new ModifiersTest)}
+  ${see(new HtmlTest)}
   ${see(new InlineFormatTest)}
-  ${see(new AutoFormatTest)}
+  ${see(new ModifiersTest)}
 
 ### Generators
   ${pending}

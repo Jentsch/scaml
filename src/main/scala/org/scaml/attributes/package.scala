@@ -58,7 +58,7 @@ package object attributes
 
   val LineHeight = new Attribute[Int]("LineHeight")
 
-  /** Only for Web documents */
+  /** Only for web documents */
   val Tag = new Attribute[String]("Tag")
 }
 

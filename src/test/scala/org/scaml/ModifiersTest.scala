@@ -13,7 +13,7 @@ ${"Modifiers".title}
 With given two Attributes of Int A and B:
 
 ### Default behaviour
-  ${Modifiers.empty should be empty}
+  ${Modifiers.empty should beEmpty}
   ${(A > 1) get A should beSome(1)}
   ${(A > 1) get B should beNone}
   ${(A > 1 & B > 2) get A should beSome(1)}

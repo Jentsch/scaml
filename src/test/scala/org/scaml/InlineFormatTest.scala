@@ -5,33 +5,31 @@ import org.specs2._
 
 class InlineFormatTest extends Specification {
 
-  object TestCase extends templates.General {
-    override val p = Modifiers.empty
-    val Red: Modifier[Color] = TextColor > red
-    val Blue: Modifier[Color] = TextColor > blue
-    val name = "Bob"
-    val note = (node: Node) =>
-      p">$node<"
+  val q = Modifiers.empty
+  val Red: Modifier[Color] = TextColor > red
+  val Blue: Modifier[Color] = TextColor > blue
 
-    val a = p"Only text"
-    val b = p"Hello $name"
-    val c = p"This is $p nested"
-    val d = p"This is $Red red and this not"
-    val e = p"This is $Red {red and this also}"
-    val f = p"This is $Red { red and this is $Blue {blue}}"
-    val g = p"This is $Red { red and this is $name}"
+  val name = "Bob"
+  val note = (node: Node) => ml">$node<"
 
-    val h = p"$p{This is deeply $p nested}"
-    val i = p"Some text $note {some other text}"
-    val j = p"Some text $p $note {some other text}"
-    val k = p"Some $p"
-  }
+  val a = ml"Only text"
+  val b = ml"Hello $name"
+  val c = ml"This is $q nested"
+  val d = ml"This is $Red red and this not"
+  val e = ml"This is $Red {red and this also}"
+  val f = ml"This is $Red { red and this is $Blue {blue}}"
+  val g = ml"This is $Red { red and this is $name}"
+
+  val h = ml"$q{This is deeply $q nested}"
+  val i = ml"Some text $note {some other text}"
+  val j = ml"Some text $q $note {some other text}"
+  val k = ml"Some $q"
+
+  def openBraces = ml"$q { left open"
 
   object textParts {
     def of(e: Element) = e.children.map(_.toText)
   }
-
-  import TestCase._
 
   def is = s2"""
 ${"Inline format".title}
@@ -47,6 +45,8 @@ ${"Inline format".title}
   ${i must be equalTo Element(Seq("Some text ", Element(Seq(">", Element(Seq("some other text")), "<"))))}
   ${j must be equalTo Element(Seq("Some text ", Element(Seq(Element(Seq(">", Element(Seq("some other text")), "<"))))))}
   ${k must be equalTo Element(Seq("Some ", Element(Seq(""))))}
+  ${ml"$q { left open" should throwAn[RuntimeException](".*missing.*")}
+  ${ml"${List(1, 2)}".toText must be equalTo "1 2"}
   """
 
 

@@ -3,15 +3,15 @@ package org.scaml
 import scala.collection.mutable.ListBuffer
 
 /**
- * Trait for everything that could be used inside a StringContext. E.g
+ * Trait for everything that could be used inside an ML-Context. E.g
  *
  * {{{
  *   val colorName = "blue"
  *
- *   p"The color $blue looks like ${TextColor > blue}{this}"
+ *   ml"The color $blue looks like ${TextColor > blue}{this}"
  * }}}
  *
- * Create implicit conversions for every class the should be usable within a StringContext. String allready has an
+ * Create implicit conversions for every class the should be usable within a StringContext. String already has an
  * implicit conversion to a [Text] [Node]
  * Note the String could be implicitly converted to text node. Inlineables like [[org.scaml.Modifier]] or functions
  * affecting the content after it.
@@ -56,11 +56,13 @@ trait CurlyInlineable extends Inlineable {
             rem = input
         }
       }
-      rem.headOption foreach { case Right(withEnd) =>
-        val Array(stillWhitin, outSide) = withEnd.split("}", 2)
-          collected += stillWhitin
-          rem = Right(outSide) :: rem.tail
-      }
+
+      require(rem.nonEmpty, "Closing braces are missing")
+      val Right(withEndSymbol) = rem.head
+      val Array(inside, outside) = withEndSymbol.split("}", 2)
+      collected += inside
+      rem = Right(outside) :: rem.tail
+
       wrap(collected.toList) -> rem
   }
 

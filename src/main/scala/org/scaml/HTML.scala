@@ -7,11 +7,13 @@ import scala.xml.{Elem => XElem, MetaData, NamespaceBinding, Node => XNode, Null
 object HTML {
   private val nameSpace: NamespaceBinding = scala.xml.TopScope
 
+  val noSemantic = Set("div", "span")
+
   def apply(document: Node): XNode = {
     def body(node: XNode): XNode = node match {
       case XElem(_, _, Null, _, child: XElem) =>
         body(child)
-      case XElem(prefix, _, attributes, scope, children) =>
+      case XElem(prefix, tag, attributes, scope, children) if noSemantic(tag) =>
         XElem(prefix, "body", attributes, scope, true, children)
       case b => elem("body", Map.empty, Seq(b))
     }
@@ -67,7 +69,7 @@ object HTML {
         nameTranslation(attribute) + ": " + value.toString
     }.mkString("; ")
 
-  private val nameTranslation = Map[Attribute[_], String](
+  protected[scaml] val nameTranslation = Map[Attribute[_], String](
     TextColor -> "color",
     SpaceAfter -> "margin-bottom",
     SpaceBefore -> "margin-top").
@@ -75,11 +77,13 @@ object HTML {
 
   private def genericToCSS(attribute: Attribute[_]): String =
     attribute.name.foldLeft("") {
+      case ("", first) =>
+        first.toLower.toString
       case (r, upper) if upper.isUpper =>
         r + '-' + upper.toLower
       case (r, lower) =>
         r + lower
-    }.tail
+    }
 
 
   private def styleModifiers(modifiers: Modifiers) =

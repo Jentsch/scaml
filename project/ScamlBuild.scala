@@ -1,5 +1,5 @@
+import sbt.Keys._
 import sbt._
-import Keys._
 
 object ScamlBuild extends Build {
   val web = TaskKey[File]("web", "Creates api doc and tests'")
@@ -29,17 +29,9 @@ object ScamlBuild extends Build {
       target
     }
 
-  lazy val root = project.aggregate(main, example)
-
-  lazy val main =
-    Project(id = "main", base = file(".")) settings (
-      webTask,
-      testOptions in Test := Tests.Argument(testOut) :: Nil
-    )
-
-  lazy val example =
-    Project(id = "example", base = file("example")) dependsOn main settings (
-      description := "Some simple examples to learn scaml"
+  lazy val root = Project(id = "main", base = file(".")) settings(
+    webTask,
+    testOptions in Test := Tests.Argument(testOut) :: Nil
     )
 
 }

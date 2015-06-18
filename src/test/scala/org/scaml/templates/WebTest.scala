@@ -1,6 +1,7 @@
 package org.scaml.templates
 
-import org.scaml.HTML
+import org.scaml.WebElements._
+import org.scaml._
 import org.specs2._
 
 class WebTest extends Specification {
@@ -10,11 +11,11 @@ class WebTest extends Specification {
   ${result must contain("<input length=\"10\" name=\"e-mail\"/>")}
 """
 
-  val result = HTML(TestCase).toString()
+  val result = HTML(testCase).toString()
 
-  object TestCase extends Web {
-    p""" ${postForm("/post")} {
+  def testCase =
+    ml""" ${postForm("/post")} {
       ${textInput("e-mail")}
     }"""
-  }
+
 }
