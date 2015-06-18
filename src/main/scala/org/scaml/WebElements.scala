@@ -63,6 +63,10 @@ trait WebElements {
 
   def unorderedList = Tag > "ul"
 
+  def image(url: String) =
+    Tag > "img" &
+      WebAttribute("src") > url
+
   def item = Tag > "li"
 }
 

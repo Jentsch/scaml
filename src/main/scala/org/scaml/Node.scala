@@ -20,11 +20,6 @@ final case class Text(text: String) extends Node {
   def toText: String = text
 }
 
-// TODO: need concept for external sources
-final class Graphic private() extends Node {
-  def toText: String = ""
-}
-
 /**
  * A group of elements, maybe with additional modifiers.
  */
