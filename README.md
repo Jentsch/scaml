@@ -2,6 +2,8 @@ Scaml
 ====
 [![Build Status](https://travis-ci.org/Jentsch/scaml.svg?branch=master)](https://travis-ci.org/Jentsch/scaml)
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Jentsch/scaml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 An inner DSL in Scala to write documents.
 
 How to use?
