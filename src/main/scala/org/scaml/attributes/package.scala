@@ -11,7 +11,7 @@ package object attributes
   with Display {
 
   object Link extends WebAttribute[String]("href") {
-    def >(url: URL): Modifier[String] =
+    def >(url: URL): Modifier =
       this > url.toString
   }
 

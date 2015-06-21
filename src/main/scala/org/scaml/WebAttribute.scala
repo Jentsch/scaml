@@ -9,8 +9,6 @@ package org.scaml
  * @tparam V required type of the value
  */
 protected[scaml] case class WebAttribute[V](override val name: String) extends Attribute[V](name) {
-  type Value = V
-
   def stringRepresentation(value: V) =
     value.toString
 }

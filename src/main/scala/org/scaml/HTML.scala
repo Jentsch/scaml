@@ -32,20 +32,18 @@ object HTML {
       val childrenContent = children map content
       val attrs: Map[String, String] = {
         val webModifiers = modifiers.collect { case web if web.attribute.isInstanceOf[WebAttribute[_]] =>
-          val Modifier(attribute: WebAttribute[_], value) = web
-          attribute.name -> attribute.stringRepresentation(value.asInstanceOf[attribute.Value])
+          web.attribute.name -> web.attribute.asInstanceOf[WebAttribute[web.attribute.Value]].stringRepresentation(web.value)
         }
 
         Map("style" -> style(styleModifiers(modifiers))).filterNot(_._2.isEmpty) ++ webModifiers
       }
 
-      modifiers.get(Link) match {
-        case Some(path) =>
-          elem("a", attrs, childrenContent)
-        case None =>
-          val tag = modifiers.get(Tag).getOrElse("span")
-          elem(tag, attrs, childrenContent)
+      val tag = if (modifiers isDefinedAt Link) {
+        "a"
+      } else {
+        modifiers.getOrElse(Tag, "span")
       }
+      elem(tag, attrs, childrenContent)
   }
 
   private def elem(name: String, attributes: Map[String, String], children: Seq[XNode]) = {
@@ -58,14 +56,14 @@ object HTML {
 
   private def style(modifiers: Modifiers): String =
     modifiers.collect {
-      case Modifier(TextUnderline, true) =>
+      case TextUnderline(true) =>
         "text-decoration: underline"
-      case Modifier(BreakBefore, page) =>
+      case BreakBefore(page) =>
         "page-break-before:always"
-      case Modifier(BreakAfter, page) =>
+      case BreakAfter(page) =>
         "page-break-after:always"
-      case Modifier(attribute, value) if attribute != Link =>
-        nameTranslation(attribute) + ": " + value.toString
+      case modifier =>
+        nameTranslation(modifier.attribute) + ": " + modifier.value.toString
     }.mkString("; ")
 
   protected[scaml] val nameTranslation = Map[Attribute[_], String](
@@ -85,9 +83,9 @@ object HTML {
     }
 
   private def styleModifiers(modifiers: Modifiers) =
-    modifiers.filter {
-      case Modifier(_: WebAttribute[_], _) => false
-      case Modifier(attribute, _) => !isIgnoredAttribute(attribute)
+    modifiers.filter { modifier =>
+      !modifier.attribute.isInstanceOf[WebAttribute[_]] &&
+        !isIgnoredAttribute(modifier.attribute)
     }
 
   private val isIgnoredAttribute: Set[Attribute[_]] = Set(Tag)

@@ -3,11 +3,11 @@ package org.scaml
 /**
  * A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed this way.
  */
-trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
+trait Modifiers extends Iterable[Modifier] with CurlyInlineable {
 
-  protected val modifiers: Seq[Modifier[_]]
+  protected val modifiers: Seq[Modifier]
 
-  def iterator: Iterator[Modifier[_]] = modifiers.iterator
+  def iterator: Iterator[Modifier] = modifiers.iterator
 
   def isDefinedAt(attribute: Attribute[_]): Boolean =
     get(attribute).isDefined
@@ -15,6 +15,9 @@ trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
   // XXX: Is in O(n), should be O(log n)
   def get[T](attribute: Attribute[T]): Option[T] =
     modifiers.collectFirst { case attribute(t) => t }
+
+  def getOrElse[T](attribute: Attribute[T], default: => T) =
+    get(attribute).getOrElse(default)
 
   /**
    * Merges both modifiers. If a attribute is defined in `this` and `that`, the result will have the value of `that` for
@@ -37,10 +40,10 @@ trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
   def attributes: Set[Attribute[_]] =
     modifiers.map { _.attribute }.toSet
 
-  override def filter(condition: Modifier[_] => Boolean): Modifiers =
+  override def filter(condition: Modifier => Boolean): Modifiers =
     Modifiers(modifiers filter condition)
 
-  override def filterNot(condition: Modifier[_] => Boolean): Modifiers =
+  override def filterNot(condition: Modifier => Boolean): Modifiers =
     Modifiers(modifiers filterNot condition)
 
   override def toString() = modifiers.mkString("Modifiers(", ", ", ")")
@@ -52,7 +55,7 @@ trait Modifiers extends Iterable[Modifier[_]] with CurlyInlineable {
 object Modifiers {
   val empty: Modifiers = Modifiers(List.empty)
 
-  private[Modifiers] def apply(binds: Seq[Modifier[_]]): Modifiers = binds match {
+  private[Modifiers] def apply(binds: Seq[Modifier]): Modifiers = binds match {
     case Seq(single) => single
     case _ => new Modifiers with CurlyInlineable {
       val modifiers = binds

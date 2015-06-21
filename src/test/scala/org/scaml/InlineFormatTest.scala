@@ -6,8 +6,8 @@ import org.specs2._
 class InlineFormatTest extends Specification {
 
   val q = Modifiers.empty
-  val Red: Modifier[Color] = TextColor > red
-  val Blue: Modifier[Color] = TextColor > blue
+  val Red = TextColor > red
+  val Blue = TextColor > blue
 
   val name = "Bob"
   val note = (node: Node) => ml">$node<"

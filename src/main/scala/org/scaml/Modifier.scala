@@ -23,12 +23,28 @@ package org.scaml
  * }}}
  *
  */
-case class Modifier[T](attribute: Attribute[T], value: T)
-  extends Modifiers {
-
-  type Value = T
+sealed abstract class Modifier extends Modifiers {
+  val attribute: Attribute[_]
+  val value: attribute.Value
 
   protected val modifiers = List(this)
 
   override def toString() = attribute.toString + "> " + value.toString
+
+  override def equals(other: Any): Boolean = other match {
+    case that: Modifier =>
+        attribute == that.attribute &&
+        value == that.value
+    case _ => false
+  }
+
+  override def hashCode(): Int =
+    attribute.hashCode() * 31 + value.hashCode()
+}
+
+object Modifier {
+  def apply[V](attr: Attribute[V], v: V) = new Modifier {
+    override val attribute: Attribute[V] = attr
+    override val value: V = v
+  }
 }

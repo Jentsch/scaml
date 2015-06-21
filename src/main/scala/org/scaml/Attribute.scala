@@ -6,13 +6,15 @@ package org.scaml
  * Each attribute should be instantiated only once. The comparison checks for identity.
  */
 class Attribute[T](val name: String) {
+  type Value = T
+
   /**
    * Creates a modifier.
    */
-  def >(value: T) = new Modifier(this, value)
+  def >(value: T) = Modifier(this, value)
 
   //XXX: Casting
-  def unapply(modifier: Modifier[_]) =
+  def unapply(modifier: Modifier) =
     if (modifier.attribute == this)
       Some(modifier.value.asInstanceOf[T])
     else
