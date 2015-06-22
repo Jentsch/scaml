@@ -7,3 +7,6 @@
 <org.scaml.Index-results timestamp="1435011996101"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" expectations="1" examples="1"></stats></result>
 </org.scaml.Index-results>
 <org.scaml.Index-stats timestamp="1435011996125"><stats pending="1" time="3" expectations="1" examples="1"></stats></org.scaml.Index-stats>
+<org.scaml.Index-results timestamp="1435012339914"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:124)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+</org.scaml.Index-results>
+<org.scaml.Index-stats timestamp="1435012339948"><stats pending="1" time="2" expectations="1" examples="1"></stats></org.scaml.Index-stats>
