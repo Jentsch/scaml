@@ -47,7 +47,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scaml is a innerDSL to build documents in Scala. To create documents extend the <a href="templates/Web.html" class="extype" name="org.scaml.templates.Web">org.scaml.templates.Web</a> trait.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scaml is a innerDSL to build documents in Scala. To create documents extend the <a href="WebElements.html" class="extype" name="org.scaml.WebElements">WebElements</a> trait.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -108,59 +108,6 @@
     </span>
       <p class="shortcomment cmt">Attributes are data for a generator, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Attributes are data for a generator, e.g. FontFamily.</p><p>Each attribute should be instantiated only once. The comparison checks for identity.
 </p></div></div>
-    </li><li name="org.scaml.BatchModifiers" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="BatchModifiersextendsAnyRef"></a>
-      <a id="BatchModifiers:BatchModifiers"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="BatchModifiers.html"><span class="name">BatchModifiers</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@BatchModifiersextendsAnyRef" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Used to modify multiple nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Used to modify multiple nodes.</p><pre><span class="kw">def</span> list = {
-  <span class="kw">val</span> block = text
-  <span class="kw">val</span> line  =
-    text &amp;
-    SpaceAfter &gt; <span class="num">0</span> &amp;
-    PreText &gt; <span class="lit">"￢ﾀﾢ "</span>
-
-  line asMinorOf block
-}
-
-list ||
-  <span class="lit">"Item 1"</span> |
-  <span class="lit">"Item 2"</span></pre></div></div>
-    </li><li name="org.scaml.Builder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="BuilderextendsElement"></a>
-      <a id="Builder:Builder"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Builder.html"><span class="name">Builder</span></a><span class="result"> extends <a href="Element.html" class="extype" name="org.scaml.Element">Element</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@BuilderextendsElement" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Helper to create new nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Helper to create new nodes. Use one of its subclasses to create your own document.
-</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@implicitNotFound</span><span class="args">(<span>
-      
-      <span class="defval" name="&quot;Only usable within a Builder instance.&quot;">...</span>
-    </span>)</span>
-              
-        </dd></dl></div>
     </li><li name="org.scaml.CurlyInlineable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="CurlyInlineableextendsInlineable"></a>
       <a id="CurlyInlineable:CurlyInlineable"></a>
@@ -180,40 +127,23 @@ list ||
       <p class="shortcomment cmt">Inlineable that everything in curly braces after it or single 'word'.</p><div class="fullcomment"><div class="comment cmt"><p>Inlineable that everything in curly braces after it or single 'word'.
 Words are groups if none whitespaces and none curly braces.
 </p></div></div>
-    </li><li name="org.scaml.Element" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ElementextendsNode"></a>
+    </li><li name="org.scaml.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ElementextendsNodewithProductwithSerializable"></a>
       <a id="Element:Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Element.html"><span class="name">Element</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a></span>
+        <a href="Element.html"><span class="name">Element</span></a><span class="params">(<span name="children">children: <span class="extype" name="scala.Seq">Seq</span>[<a href="Node.html" class="extype" name="org.scaml.Node">Node</a>]</span>, <span name="modifiers">modifiers: <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a> = <span class="symbol"><span class="name"><a href="Modifiers$.html">Modifiers.empty</a></span></span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@ElementextendsNode" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.package@ElementextendsNodewithProductwithSerializable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
       <p class="shortcomment cmt">A group of elements, maybe with additional modifiers.</p>
-    </li><li name="org.scaml.Graphic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="GraphicextendsNode"></a>
-      <a id="Graphic:Graphic"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="Graphic.html"><span class="name">Graphic</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@GraphicextendsNode" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      
     </li><li name="org.scaml.Inlineable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="InlineableextendsAnyRef"></a>
       <a id="Inlineable:Inlineable"></a>
@@ -230,26 +160,43 @@ Words are groups if none whitespaces and none curly braces.
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait for everything that could be used inside a StringContext.</p><div class="fullcomment"><div class="comment cmt"><p>Trait for everything that could be used inside a StringContext. E.g</p><pre><span class="kw">val</span> colorName = <span class="lit">"blue"</span>
+      <p class="shortcomment cmt">Trait for everything that could be used inside an ML-Context.</p><div class="fullcomment"><div class="comment cmt"><p>Trait for everything that could be used inside an ML-Context. E.g</p><pre><span class="kw">val</span> colorName = <span class="lit">"blue"</span>
 
-p<span class="lit">"The color $blue looks like ${TextColor > blue}{this}"</span></pre><p>Create implicit conversions for every class the should be usable within a StringContext. String allready has an
+ml<span class="lit">"The color $blue looks like ${TextColor > blue}{this}"</span></pre><p>Create implicit conversions for every class the should be usable within a StringContext. String already has an
 implicit conversion to a [Text] [Node]
 Note the String could be implicitly converted to text node. Inlineables like <a href="Modifier.html" class="extype" name="org.scaml.Modifier">org.scaml.Modifier</a> or functions
 affecting the content after it.
 </p></div></div>
-    </li><li name="org.scaml.Modifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Modifier[T]extendsModifierswithProductwithSerializable"></a>
-      <a id="Modifier[T]:Modifier[T]"></a>
+    </li><li name="org.scaml.ML" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MLextendsAnyRef"></a>
+      <a id="ML:ML"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Modifier.html"><span class="name">Modifier</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="attribute">attribute: <a href="Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="org.scaml.Modifier.T">T</span>]</span>, <span name="value">value: <span class="extype" name="org.scaml.Modifier.T">T</span></span>)</span><span class="result"> extends <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="package$$ML.html"><span class="name">ML</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@Modifier[T]extendsModifierswithProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.package@MLextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Used for the string interpolation feature.</p><div class="fullcomment"><div class="comment cmt"><p>Used for the string interpolation feature.</p><p>Example:</p><pre>ml<span class="lit">"A $bold link ${Link > "</span>wikipedia.org<span class="lit">"}{to wikipedia}."</span></pre></div></div>
+    </li><li name="org.scaml.Modifier" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ModifierextendsModifiers"></a>
+      <a id="Modifier:Modifier"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Modifier.html"><span class="name">Modifier</span></a><span class="result"> extends <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@ModifierextendsModifiers" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -259,7 +206,7 @@ operations like Modifiers.</p><pre><span class="kw">val</span> warning = TextCol
 (both are part of <code>scaml.attributes</code>.</p><p>Inside a <code>Builder</code> it's now possible to do:</p><pre>text &amp; warning | <span class="lit">"Warning message"</span></pre><p>or even shorter:</p><pre><span class="kw">val</span> warning = text &amp; TextColor &gt; red
 warning<span class="lit">"Warning message"</span></pre></div></div>
     </li><li name="org.scaml.Modifiers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="ModifiersextendsIterable[org.scaml.Modifier[_]]withCurlyInlineable"></a>
+      <a id="ModifiersextendsIterable[org.scaml.Modifier]withCurlyInlineable"></a>
       <a id="Modifiers:Modifiers"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -267,15 +214,14 @@ warning<span class="lit">"Warning message"</span></pre></div></div>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[_]] with <a href="CurlyInlineable.html" class="extype" name="org.scaml.CurlyInlineable">CurlyInlineable</a></span>
+        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>] with <a href="CurlyInlineable.html" class="extype" name="org.scaml.CurlyInlineable">CurlyInlineable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@ModifiersextendsIterable[org.scaml.Modifier[_]]withCurlyInlineable" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.package@ModifiersextendsIterable[org.scaml.Modifier]withCurlyInlineable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">A set of Modifiers.</p><div class="fullcomment"><div class="comment cmt"><p>A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed
-this way.
+      <p class="shortcomment cmt">A set of Modifiers.</p><div class="fullcomment"><div class="comment cmt"><p>A set of Modifiers. Is like a Map[Attribute[T], T], but that can't expressed this way.
 </p></div></div>
     </li><li name="org.scaml.Node" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="NodeextendsInlineable"></a>
@@ -293,8 +239,7 @@ this way.
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Base class for document content
-</p>
+      <p class="shortcomment cmt">Base class for document content.</p>
     </li><li name="org.scaml.Text" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextextendsNodewithProductwithSerializable"></a>
       <a id="Text:Text"></a>
@@ -312,6 +257,44 @@ this way.
       </a>
     </span>
       <p class="shortcomment cmt">Text elements contains only one string and have no attributes.</p>
+    </li><li name="org.scaml.WebAttribute" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WebAttribute[V]extendsAttribute[V]withProductwithSerializable"></a>
+      <a id="WebAttribute[V]:WebAttribute[V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WebAttribute.html"><span class="name">WebAttribute</span></a><span class="tparams">[<span name="V">V</span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="org.scaml.WebAttribute.V">V</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@WebAttribute[V]extendsAttribute[V]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Directly interpreted as parameter name and value by the <a href="HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Directly interpreted as parameter name and value by the <a href="HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>. Equality base upon the
+name. If the type <code>T</code> requires a specific conversion to be represented as string override the <code>stringRepresentation</code>
+method.
+</p></div><dl class="paramcmts block"><dt class="tparam">V</dt><dd class="cmt"><p>required type of the value
+</p></dd><dt class="param">name</dt><dd class="cmt"><p>used by the HTML generator as key</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="org.scaml.WebElements" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WebElementsextendsAnyRef"></a>
+      <a id="WebElements:WebElements"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WebElements.html"><span class="name">WebElements</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@WebElementsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 
@@ -319,41 +302,7 @@ this way.
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.scaml.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BatchModifiers"></a>
-      <a id="BatchModifiers:BatchModifiers"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="BatchModifiers$.html"><span class="name">BatchModifiers</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@BatchModifiers" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Element"></a>
-      <a id="Element:Element"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="Element$.html"><span class="name">Element</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@Element" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.HTML" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.scaml.HTML" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="HTML"></a>
       <a id="HTML:HTML"></a>
       <h4 class="signature">
@@ -366,6 +315,23 @@ this way.
       </span>
       </h4><span class="permalink">
       <a href="../../index.html#org.scaml.package@HTML" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Converts ScaML documents into HTML.</p>
+    </li><li name="org.scaml.Modifier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Modifier"></a>
+      <a id="Modifier:Modifier"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Modifier$.html"><span class="name">Modifier</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@Modifier" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -387,6 +353,24 @@ this way.
       </a>
     </span>
       
+    </li><li name="org.scaml.WebElements" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WebElements"></a>
+      <a id="WebElements:WebElements"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WebElements$.html"><span class="name">WebElements</span></a><span class="result"> extends <a href="WebElements.html" class="extype" name="org.scaml.WebElements">WebElements</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@WebElements" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Basic
+</p>
     </li><li name="org.scaml.attributes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="attributes"></a>
       <a id="attributes:attributes"></a>
@@ -421,6 +405,40 @@ this way.
       </a>
     </span>
       
+    </li><li name="org.scaml#groupTraversable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="groupTraversable[C](traversable:Traversable[C])(implicitconvertElements:C=&gt;org.scaml.Node):org.scaml.Element"></a>
+      <a id="groupTraversable[C](Traversable[C])((C)⇒Node):Element"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">groupTraversable</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="traversable">traversable: <span class="extype" name="scala.Traversable">Traversable</span>[<span class="extype" name="org.scaml.groupTraversable.C">C</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="convertElements">convertElements: (<span class="extype" name="org.scaml.groupTraversable.C">C</span>) ⇒ <a href="Node.html" class="extype" name="org.scaml.Node">Node</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scaml.Element">Element</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@groupTraversable[C](traversable:Traversable[C])(implicitconvertElements:C=&gt;org.scaml.Node):org.scaml.Element" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml#intToText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="intToText(int:Int):org.scaml.Text"></a>
+      <a id="intToText(Int):Text"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intToText</span><span class="params">(<span name="int">int: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="Text.html" class="extype" name="org.scaml.Text">Text</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@intToText(int:Int):org.scaml.Text" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
     </li><li name="org.scaml#stringToText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="stringToText(str:String):org.scaml.Text"></a>
       <a id="stringToText(String):Text"></a>
@@ -451,23 +469,6 @@ this way.
       </span>
       </h4><span class="permalink">
       <a href="../../index.html#org.scaml.package@stringsToTexts(strings:Iterable[String]):Seq[org.scaml.Text]" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.templates" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="templates"></a>
-      <a id="templates:templates"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a href="templates/package.html"><span class="name">templates</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@templates" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

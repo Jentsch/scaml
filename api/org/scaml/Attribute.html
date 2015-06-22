@@ -55,7 +55,7 @@
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">Known Subclasses</span>
-            <div class="subClasses hiddenContent"><a href="attributes/package$$Link$.html" class="extype" name="org.scaml.attributes.Link">Link</a>, <a href="attributes/Toggle.html" class="extype" name="org.scaml.attributes.Toggle">Toggle</a>, <a href="attributes/WebAttribute.html" class="extype" name="org.scaml.attributes.WebAttribute">WebAttribute</a>, <a href="attributes/WhiteSpaceCollapse$.html" class="extype" name="org.scaml.attributes.WhiteSpaceCollapse">WhiteSpaceCollapse</a></div>
+            <div class="subClasses hiddenContent"><a href="attributes/package$$Link$.html" class="extype" name="org.scaml.attributes.Link">Link</a>, <a href="attributes/Toggle.html" class="extype" name="org.scaml.attributes.Toggle">Toggle</a>, <a href="WebAttribute.html" class="extype" name="org.scaml.WebAttribute">WebAttribute</a>, <a href="attributes/WhiteSpaceCollapse$.html" class="extype" name="org.scaml.attributes.WhiteSpaceCollapse">WhiteSpaceCollapse</a></div>
           </div></div>
         
 
@@ -113,7 +113,27 @@
     </li></ol>
             </div>
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.scaml.Attribute.Value" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Value=T"></a>
+      <a id="Value:Value"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Value</span><span class="result"> = <span class="extype" name="org.scaml.Attribute.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.Attribute@Value=T" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -171,18 +191,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.scaml.Attribute#&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&gt;(value:T):org.scaml.Modifier[T]"></a>
-      <a id="&gt;(T):Modifier[T]"></a>
+      <a id="&gt;(value:T):org.scaml.Modifier{valattribute:org.scaml.Attribute[T]}"></a>
+      <a id="&gt;(T):Modifier{valattribute:org.scaml.Attribute[T]}"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="value">value: <span class="extype" name="org.scaml.Attribute.T">T</span></span>)</span><span class="result">: <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[<span class="extype" name="org.scaml.Attribute.T">T</span>]</span>
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="value">value: <span class="extype" name="org.scaml.Attribute.T">T</span></span>)</span><span class="result">: <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> { val attribute: org.scaml.Attribute[T] }</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.Attribute@&gt;(value:T):org.scaml.Modifier[T]" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.Attribute@&gt;(value:T):org.scaml.Modifier{valattribute:org.scaml.Attribute[T]}" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>
@@ -438,18 +458,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.scaml.Attribute">Attribute</a> → AnyRef → Any</dd></dl></div>
     </li><li name="org.scaml.Attribute#unapply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="unapply(modifier:org.scaml.Modifier[_]):Option[T]"></a>
-      <a id="unapply(Modifier[_]):Option[T]"></a>
+      <a id="unapply(modifier:org.scaml.Modifier):Option[T]"></a>
+      <a id="unapply(Modifier):Option[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">unapply</span><span class="params">(<span name="modifier">modifier: <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[_]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.scaml.Attribute.T">T</span>]</span>
+        <span class="name">unapply</span><span class="params">(<span name="modifier">modifier: <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.scaml.Attribute.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.Attribute@unapply(modifier:org.scaml.Modifier[_]):Option[T]" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.Attribute@unapply(modifier:org.scaml.Modifier):Option[T]" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" />
       </a>
     </span>

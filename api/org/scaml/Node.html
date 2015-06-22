@@ -49,13 +49,13 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base class for document content
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Base class for document content.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/Node.scala" target="_blank">Node.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="Inlineable.html" class="extype" name="org.scaml.Inlineable">Inlineable</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">Known Subclasses</span>
-            <div class="subClasses hiddenContent"><a href="BatchModifiers$$BatchElement.html" class="extype" name="org.scaml.BatchModifiers.BatchElement">BatchElement</a>, <a href="Builder.html" class="extype" name="org.scaml.Builder">Builder</a>, <a href="Element.html" class="extype" name="org.scaml.Element">Element</a>, <a href="templates/General.html" class="extype" name="org.scaml.templates.General">General</a>, <a href="Graphic.html" class="extype" name="org.scaml.Graphic">Graphic</a>, <a href="templates/Presentation.html" class="extype" name="org.scaml.templates.Presentation">Presentation</a>, <a href="templates/Run.html" class="extype" name="org.scaml.templates.Run">Run</a>, <a href="Text.html" class="extype" name="org.scaml.Text">Text</a>, <a href="templates/Web.html" class="extype" name="org.scaml.templates.Web">Web</a></div>
+            <div class="subClasses hiddenContent"><a href="Element.html" class="extype" name="org.scaml.Element">Element</a>, <a href="Text.html" class="extype" name="org.scaml.Text">Text</a></div>
           </div></div>
         
 
@@ -97,7 +97,7 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="org.scaml.Node#toText" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="org.scaml.Node#toText" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="toText:String"></a>
       <a id="toText:String"></a>
       <h4 class="signature">
@@ -113,7 +113,7 @@
         <img src="../../lib/permalink.png" />
       </a>
     </span>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="org.scaml">org.scaml</a>] </dd></dl></div>
     </li></ol>
             </div>
 
@@ -153,23 +153,6 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.scaml.Node#+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="+(that:org.scaml.Node):org.scaml.Element"></a>
-      <a id="+(Node):Element"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="that">that: <a href="" class="extype" name="org.scaml.Node">Node</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scaml.Element">Element</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.Node@+(that:org.scaml.Node):org.scaml.Element" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Combines two Nodes into one.</p>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
@@ -187,25 +170,6 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.scaml.Node#add" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="add(modifiers:org.scaml.Modifiers):org.scaml.Element"></a>
-      <a id="add(Modifiers):Element"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">add</span><span class="params">(<span name="modifiers">modifiers: <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scaml.Element">Element</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.Node@add(modifiers:org.scaml.Modifiers):org.scaml.Element" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new Element by adding attributes to this Node.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new Element by adding attributes to this Node. If this node isn't an element, it will be
-wrapped by a element node with the modifiers.
-</p></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>

@@ -228,29 +228,7 @@
       </a>
     </span>
       <p class="shortcomment cmt">Adds unary + and - prefixes operators for boolean attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Adds unary + and - prefixes operators for boolean attributes. See 'Known Subclasses' below for
-examples.
-</p></div></div>
-    </li><li name="org.scaml.attributes.WebAttribute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="WebAttribute[V]extendsAttribute[V]"></a>
-      <a id="WebAttribute[V]:WebAttribute[V]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="WebAttribute.html"><span class="name">WebAttribute</span></a><span class="tparams">[<span name="V">V</span>]</span><span class="result"> extends <a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="org.scaml.attributes.WebAttribute.V">V</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@WebAttribute[V]extendsAttribute[V]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Directly interpreted as parameter name and value by the <a href="../HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Directly interpreted as parameter name and value by the <a href="../HTML$.html" class="extype" name="org.scaml.HTML">HTML generator</a>. Equality base upon the
-name. If the type <code>T</code> requires a specific conversion to be represented as string override the <code>stringRepresentation</code>
-method.
-</p></div><dl class="paramcmts block"><dt class="tparam">V</dt><dd class="cmt"><p>required type of the value
-</p></dd></dl></div>
+examples.</p></div></div>
     </li></ol>
             </div>
 
@@ -421,7 +399,7 @@ method.
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="package$$Link$.html"><span class="name">Link</span></a><span class="result"> extends <a href="WebAttribute.html" class="extype" name="org.scaml.attributes.WebAttribute">WebAttribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <a href="package$$Link$.html"><span class="name">Link</span></a><span class="result"> extends <a href="../WebAttribute.html" class="extype" name="org.scaml.WebAttribute">WebAttribute</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.scaml.attributes.package@Link" title="Permalink" target="_top">
@@ -479,7 +457,7 @@ method.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Only for Web documents</p>
+      <p class="shortcomment cmt">Only for web documents</p>
     </li><li name="org.scaml.attributes#TextAlign" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextAlign:org.scaml.Attribute[String]"></a>
       <a id="TextAlign:Attribute[String]"></a>
@@ -599,24 +577,7 @@ method.
       </a>
     </span>
       
-    </li><li name="org.scaml.attributes.WebAttribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="WebAttribute"></a>
-      <a id="WebAttribute:WebAttribute"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="WebAttribute$.html"><span class="name">WebAttribute</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@WebAttribute" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.attributes.WhiteSpaceCollapse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.scaml.attributes.WhiteSpaceCollapse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="WhiteSpaceCollapse"></a>
       <a id="WhiteSpaceCollapse:WhiteSpaceCollapse"></a>
       <h4 class="signature">
@@ -632,7 +593,10 @@ method.
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">En- or disables the collapsing of white spaces.</p>
+      <p class="shortcomment cmt">En- or disables the collapsing of white spaces.</p><div class="fullcomment"><div class="comment cmt"><p>En- or disables the collapsing of white spaces.</p><p>Example:</p><pre>ml<span class="lit">""</span><span class="lit">"
+  ${+WhiteSpaceCollapse} {much        space between words}
+  this   collapse to singe    spaces
+"</span><span class="lit">""</span></pre></div></div>
     </li><li name="org.scaml.attributes.Color.PreDefs#aqua" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="aqua:org.scaml.attributes.Color"></a>
       <a id="aqua:Color"></a>
@@ -728,18 +692,18 @@ only place in other block elements.
 </span></p><div class="fullcomment"><div class="comment cmt"><p>Sample: <span style="background: #00F; color: #FFF;">Blue</span>
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>PreDefs</dd></dl></div>
     </li><li name="org.scaml.attributes#bold" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="bold:org.scaml.Modifier[Int]"></a>
-      <a id="bold:Modifier[Int]"></a>
+      <a id="bold:org.scaml.Modifier{valattribute:org.scaml.Attribute[Int]}"></a>
+      <a id="bold:Modifier{valattribute:org.scaml.Attribute[Int]}"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">bold</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">bold</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> { val attribute: org.scaml.Attribute[Int] }</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.package@bold:org.scaml.Modifier[Int]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.package@bold:org.scaml.Modifier{valattribute:org.scaml.Attribute[Int]}" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>

@@ -50,8 +50,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Adds unary + and - prefixes operators for boolean attributes. See 'Known Subclasses' below for
-examples.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/attributes/Toggle.scala" target="_blank">Toggle.scala</a></dd></dl><div class="toggleContainer block">
+examples.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/scaml/blob/master/src/main/scala/org/scaml/attributes/Toggle.scala" target="_blank">Toggle.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
@@ -114,7 +113,27 @@ examples.
     </li></ol>
             </div>
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.scaml.Attribute.Value" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Value=T"></a>
+      <a id="Value:Value"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Value</span><span class="result"> = <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.scaml.attributes.Toggle@Value=T" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a></dd></dl></div>
+    </li></ol>
+            </div>
 
         
 
@@ -172,18 +191,18 @@ examples.
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.scaml.Attribute#&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&gt;(value:T):org.scaml.Modifier[T]"></a>
-      <a id="&gt;(Boolean):Modifier[Boolean]"></a>
+      <a id="&gt;(value:T):org.scaml.Modifier{valattribute:org.scaml.Attribute[T]}"></a>
+      <a id="&gt;(Boolean):Modifier{valattribute:org.scaml.Attribute[Boolean]}"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> { val attribute: org.scaml.Attribute[Boolean] }</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.Toggle@&gt;(value:T):org.scaml.Modifier[T]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.Toggle@&gt;(value:T):org.scaml.Modifier{valattribute:org.scaml.Attribute[T]}" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
@@ -440,56 +459,56 @@ examples.
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a> → AnyRef → Any</dd></dl></div>
     </li><li name="org.scaml.Attribute#unapply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unapply(modifier:org.scaml.Modifier[_]):Option[T]"></a>
-      <a id="unapply(Modifier[_]):Option[Boolean]"></a>
+      <a id="unapply(modifier:org.scaml.Modifier):Option[T]"></a>
+      <a id="unapply(Modifier):Option[Boolean]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">unapply</span><span class="params">(<span name="modifier">modifier: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[_]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <span class="name">unapply</span><span class="params">(<span name="modifier">modifier: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.Toggle@unapply(modifier:org.scaml.Modifier[_]):Option[T]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.Toggle@unapply(modifier:org.scaml.Modifier):Option[T]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Attribute.html" class="extype" name="org.scaml.Attribute">Attribute</a></dd></dl></div>
     </li><li name="org.scaml.attributes.Toggle#unary_+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="unary_+:org.scaml.Modifier[Boolean]"></a>
-      <a id="unary_+:Modifier[Boolean]"></a>
+      <a id="unary_+:org.scaml.Modifier{valattribute:org.scaml.Attribute[Boolean]}"></a>
+      <a id="unary_+:Modifier{valattribute:org.scaml.Attribute[Boolean]}"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: unary_$plus" class="name">unary_+</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <span title="gt4s: unary_$plus" class="name">unary_+</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> { val attribute: org.scaml.Attribute[Boolean] }</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.Toggle@unary_+:org.scaml.Modifier[Boolean]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.Toggle@unary_+:org.scaml.Modifier{valattribute:org.scaml.Attribute[Boolean]}" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Allows to write <code>+ $Name</code> instant of <code>$Name &gt; true</code>.</p>
+      <p class="shortcomment cmt">Allows to write <code>+ Toggle</code> instant of <code>Toggle &gt; true</code>.</p>
     </li><li name="org.scaml.attributes.Toggle#unary_-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="unary_-:org.scaml.Modifier[Boolean]"></a>
-      <a id="unary_-:Modifier[Boolean]"></a>
+      <a id="unary_-:org.scaml.Modifier{valattribute:org.scaml.Attribute[Boolean]}"></a>
+      <a id="unary_-:Modifier{valattribute:org.scaml.Attribute[Boolean]}"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> { val attribute: org.scaml.Attribute[Boolean] }</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.scaml.attributes.Toggle@unary_-:org.scaml.Modifier[Boolean]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.scaml.attributes.Toggle@unary_-:org.scaml.Modifier{valattribute:org.scaml.Attribute[Boolean]}" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Allows to write <code>- $Name</code> instant of <code>$Name &gt; false</code>.</p>
+      <p class="shortcomment cmt">Allows to write <code>- Toggle</code> instant of <code>Toggle &gt; false</code>.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
