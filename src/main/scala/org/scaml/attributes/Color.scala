@@ -5,20 +5,24 @@ package org.scaml.attributes
  * [[org.scaml.attributes attributes]] package.
  */
 final class Color private[Color] (val intRep: Int) extends AnyVal {
+  /**
+   * The red component of the color.
+   */
   def red = (intRep / (256 * 256)) & 255
+
+  /**
+   * The green component of the color.
+   */
   def green = (intRep / 256) & 255
+
+  /**
+   * The blue component of the color.
+   */
   def blue = intRep & 255
 
-  /** Shortcut for red */
-  @inline
-  def r = red
-  /** Shortcut for green */
-  @inline
-  def g = green
-  /** Shortcut for blue */
-  @inline
-  def b = blue
-
+  /**
+   * Hexadecimal representation
+   */
   def toHex =
     f"$intRep%06X"
 

@@ -3,7 +3,7 @@ package org.scaml
 import java.net.URL
 
 /**
- *  typesafe default attributes.
+ *  A collection of common attributes.
  */
 package object attributes
   extends Breaks
@@ -60,6 +60,20 @@ package object attributes
 
   /** Only for web documents */
   val Tag = new Attribute[String]("Tag")
+
+  /**
+   * En- or disables the collapsing of white spaces.
+   *
+   * Example:
+   * {{{
+   *   ml"""
+   *     ${+WhiteSpaceCollapse} {much        space between words}
+   *     this >    <  white spaces collapse to singe    spaces
+   *   """
+   * }}}
+   */
+  val WhiteSpaceCollapse = new Toggle("WhiteSpaceCollapse")
+
 }
 
 package attributes {
