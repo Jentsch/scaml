@@ -1,4 +1,3 @@
-<org.scaml.attributes.DistanceTest-stats timestamp="1434907244471"><stats time="1" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
-<org.scaml.attributes.DistanceTest-stats timestamp="1434922180749"><stats time="1" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
-<org.scaml.attributes.DistanceTest-stats timestamp="1435011996214"><stats time="1" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
-<org.scaml.attributes.DistanceTest-stats timestamp="1435012340026"><stats time="1" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
+<org.scaml.attributes.DistanceTest-stats timestamp="1435786804989"><stats time="51" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
+<org.scaml.attributes.DistanceTest-stats timestamp="1435786849372"><stats time="52" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
+<org.scaml.attributes.DistanceTest-stats timestamp="1435786957865"><stats time="41" expectations="12" successes="12" examples="12"></stats></org.scaml.attributes.DistanceTest-stats>
