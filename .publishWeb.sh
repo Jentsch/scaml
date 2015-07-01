@@ -8,6 +8,7 @@ rev=$(git rev-parse --short HEAD)
 
 rm -rf "$WEB"
 git clone --single-branch --branch "gh-pages" "https://$GH_PAGES@github.com/Jentsch/scaml.git" "$WEB"
+rm -rf "$WEB/"*
 
 sbt web
 
