@@ -1,9 +1,10 @@
 package org.scaml.attributes
 
 import org.specs2._
-import Double._
 
-class DistanceTest extends Specification { 
+import scala.Double._
+
+class DistanceTest extends Specification {
  
   // Distances based on floating point operations, exact matches are not likely
   private implicit class nearlyEqual(length: Distance) {
