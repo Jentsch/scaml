@@ -8,9 +8,9 @@ description := "A Scala innerDSL to describe documents"
 
 licenses += ("Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0"))
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
-crossScalaVersions := Seq("2.10.5", "2.11.6")
+crossScalaVersions := Seq("2.10.5", "2.11.7")
 
 // add scala-xml dependency when needed (for Scala 2.11 and newer)
 // this mechanism supports cross-version publishing
