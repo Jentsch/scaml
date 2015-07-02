@@ -4,6 +4,17 @@ import java.net.URL
 
 /**
  *  A collection of common attributes.
+ *
+ *  Example of usage
+ *  {{{
+ *    val warning: Modifiers =
+ *      TextColor > rgb(255, 0, 0) &
+ *      BackgroundColor > rgb(255, 255, 0)
+ *
+ *    ml"""
+ *      $warning {$bold{Warning:} something went wrong
+ *    """
+ *  }}}
  */
 package object attributes
   extends Breaks
