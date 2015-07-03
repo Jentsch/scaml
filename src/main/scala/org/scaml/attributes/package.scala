@@ -12,7 +12,7 @@ import java.net.URL
  *      BackgroundColor > rgb(255, 255, 0)
  *
  *    ml"""
- *      $warning {$bold{Warning:} something went wrong
+ *      $warning {$bold{Warning:} something went wrong}
  *    """
  *  }}}
  */
