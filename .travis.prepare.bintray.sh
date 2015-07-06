@@ -3,7 +3,7 @@
 
 # Create bintray credentials
 # Source http://www.onegeek.com.au/scala/setting-up-travis-ci-for-scala
-mkdir ~/.bintray/
+mkdir -p ~/.bintray/
 FILE=$HOME/.bintray/.credentials
 cat <<EOF >${FILE}
 realm = Bintray API Realm
@@ -16,7 +16,6 @@ echo "Created ~/.bintray/.credentials file: Here it is: "
 ls -la ${FILE}
 
 # Enable sbt plugin
-echo "" >> project/plugins.sbt
-cat .travis.plugins >> project/plugins.sbt
+cp .travis.plugins.sbt project/travis.plugins.sbt
 
 echo "bintrayPublishSettings" >> build.sbt

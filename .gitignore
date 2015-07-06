@@ -22,9 +22,5 @@ project/plugins/project/
 # Intellij specific
 .idea/
 
-# output of the example
-HTML.html
-PDF.html
-Welcome.html
-
-/bin
+# Local run of .travis.prepare.bintray.sh
+project/travis.plugins.sbt
