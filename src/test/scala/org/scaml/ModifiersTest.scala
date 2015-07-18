@@ -8,8 +8,6 @@ class ModifiersTest extends Specification {
   val B = new Attribute[Int]("B")
 
 def is = s2"""
-${"Modifiers".title}
-
 With given two Attributes of Int A and B:
 
 ### Default behaviour

@@ -22,9 +22,7 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-Xlint", "-deprecation")
 // Tests
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
-libraryDependencies += "org.specs2" %% "specs2" % "2.4.17" % "test"
-
-libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0" % "test"
+libraryDependencies += "org.specs2" %% "specs2-core" % "3.6.2" % "test"
 
 scalacOptions in Test += "-Yrangepos"
 

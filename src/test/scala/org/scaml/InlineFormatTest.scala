@@ -32,7 +32,6 @@ class InlineFormatTest extends Specification {
   }
 
   def is = s2"""
-${"Inline format".title}
   ${a must be equalTo Element(Seq("Only text"))}
   ${b must be equalTo Element(Seq("Hello ", name))}
   ${c must be equalTo Element(Seq("This is ", Element(Seq("nested"))))}

@@ -16,7 +16,6 @@ class DistanceTest extends Specification {
   import ordering._
 
 def is = s2"""
-${"Distance".title}
 ### Unit relations
   ${1000.mm === 100.cm}
   ${1.pt === 0.376065.mm}

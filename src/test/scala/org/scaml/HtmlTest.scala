@@ -17,7 +17,6 @@ class HtmlTest extends Specification {
 
   
   def is = s2"""
-  ${"HTML Test".title}
 
   ${form must contain("method=\"post\"")}
   ${form must contain("<input name=\"e-mail\" length=\"10\"/>")}
