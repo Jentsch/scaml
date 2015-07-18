@@ -44,7 +44,7 @@ private[attributes] object Color {
   /**
    * Definitions for the [[org.scaml.attributes attributes]] package.
    */
-  private[attributes] trait PreDefs {
+  private[attributes] trait Predef {
     /**
      * Sample: <span style="background: #0FF; color: #000;">Aqua</span>
      */

@@ -18,7 +18,7 @@ import java.net.URL
  */
 package object attributes
   extends Breaks
-  with Color.PreDefs
+  with Color.Predef
   with Display {
 
   object Link extends WebAttribute[String]("href") {
