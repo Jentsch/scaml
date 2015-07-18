@@ -4,21 +4,21 @@ import org.scaml.attributes._
 
 trait WebElements {
   /** Paragraph */
-  def p: Modifiers = Tag > "p"
+  def p: Modifier = Tag > "p"
 
-  protected def headline: Modifiers = Modifiers.empty
+  protected def headline: Modifier = Modifier.empty
   /**
    * Highest level of all headlines
    */
-  def title: Modifiers = headline & Tag > "h1"
+  def title: Modifier = headline & Tag > "h1"
 
-  def chapter: Modifiers = headline & Tag > "h2"
+  def chapter: Modifier = headline & Tag > "h2"
 
-  def section: Modifiers = headline & Tag > "h3"
+  def section: Modifier = headline & Tag > "h3"
 
-  def header: Modifiers = Tag > "header"
+  def header: Modifier = Tag > "header"
 
-  def footer: Modifiers = Tag > "footer"
+  def footer: Modifier = Tag > "footer"
 
   /**
    * Usage:
@@ -33,7 +33,7 @@ trait WebElements {
    * }}}
    *
    */
-  def postForm(action: String): Modifiers =
+  def postForm(action: String): Modifier =
     Tag > "form" &
       WebAttribute("method") > "post" &
       WebAttribute("action") > action
@@ -45,21 +45,21 @@ trait WebElements {
         WebAttribute("length") > length
     )
 
-  def button: Modifiers = Tag > "button"
+  def button: Modifier = Tag > "button"
 
   def br: Node = Element(Nil, Tag > "br")
 
-  def em: Modifiers = Tag > "em"
+  def em: Modifier = Tag > "em"
 
-  def strong: Modifiers = Tag > "strong"
+  def strong: Modifier = Tag > "strong"
 
   def label(`for`: String) =
     Tag > "label" &
       WebAttribute("for") > `for`
 
-  def sup: Modifiers = Tag > "sup"
+  def sup: Modifier = Tag > "sup"
 
-  def sub: Modifiers = Tag > "sub"
+  def sub: Modifier = Tag > "sub"
 
   def unorderedList = Tag > "ul"
 

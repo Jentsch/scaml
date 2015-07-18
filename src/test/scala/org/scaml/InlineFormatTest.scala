@@ -5,7 +5,7 @@ import org.specs2._
 
 class InlineFormatTest extends Specification {
 
-  val q = Modifiers.empty
+  val q = Modifier.empty
   val Red = TextColor > red
   val Blue = TextColor > blue
 

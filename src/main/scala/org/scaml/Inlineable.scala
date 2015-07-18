@@ -11,7 +11,7 @@ package org.scaml
  *
  * Create implicit conversions for every class the should be usable within a StringContext. String already has an
  * implicit conversion to a [Text] [Node]
- * Note the String could be implicitly converted to text node. Inlineables like [[org.scaml.Modifier]] or functions
+ * Note the String could be implicitly converted to text node. Inlineables like [[org.scaml.AttributeValuePair]] or functions
  * affecting the content after it.
  */
 trait Inlineable {

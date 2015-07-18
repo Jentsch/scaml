@@ -66,7 +66,7 @@ ${Tag > "html"}{
       }
   }
 
-  private def style(modifiers: Modifiers): String =
+  private def style(modifiers: Modifier): String =
     modifiers.collect {
       case TextUnderline(true) =>
         "text-decoration: underline"
@@ -94,7 +94,7 @@ ${Tag > "html"}{
         r + lower
     }
 
-  private def styleModifiers(modifiers: Modifiers) =
+  private def styleModifiers(modifiers: Modifier) =
     modifiers.filter { modifier =>
       !modifier.attribute.isInstanceOf[WebAttribute[_]] &&
         !isIgnoredAttribute(modifier.attribute)

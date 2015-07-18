@@ -16,7 +16,7 @@ package object scaml {
    *
    * Example:
    * {{{
-   *   ml"A $bold link ${Link > "wikipedia.org"}{to wikipedia}."
+   *   ml"A $bold{ link ${Link > "wikipedia.org"}{to wikipedia} }."
    * }}}
    */
   implicit class ML(sc: StringContext) {
@@ -65,4 +65,3 @@ package object scaml {
   implicit def groupTraversable[C](traversable: Traversable[C])(implicit convertElements: C => Node): Element =
     Element(traversable.map(convertElements).to[Seq])
 }
-

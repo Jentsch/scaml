@@ -11,10 +11,10 @@ class Attribute[T](val name: String) {
   /**
    * Creates a modifier.
    */
-  def >(value: T): Modifiers = Modifier(this, value)
+  def >(value: T): Modifier = AttributeValuePair(this, value)
 
   //XXX: Casting
-  def unapply(modifier: Modifier): Option[T] =
+  def unapply(modifier: AttributeValuePair): Option[T] =
     if (modifier.attribute == this) {
       Some(modifier.value.asInstanceOf[T])
     } else {

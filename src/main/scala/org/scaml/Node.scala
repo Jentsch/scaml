@@ -23,7 +23,7 @@ final case class Text(text: String) extends Node {
 /**
  * A group of elements, maybe with additional modifiers.
  */
-final case class Element(children: Seq[Node], modifiers: Modifiers = Modifiers.empty) extends Node {
+final case class Element(children: Seq[Node], modifiers: Modifier = Modifier.empty) extends Node {
   override def toString: String =
     modifiers.mkString("Element(", ", ", "") + children.mkString(" :", ", ", ")")
 
