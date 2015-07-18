@@ -11,14 +11,15 @@ class Attribute[T](val name: String) {
   /**
    * Creates a modifier.
    */
-  def >(value: T) = Modifier(this, value)
+  def >(value: T): Modifiers = Modifier(this, value)
 
   //XXX: Casting
-  def unapply(modifier: Modifier) =
-    if (modifier.attribute == this)
+  def unapply(modifier: Modifier): Option[T] =
+    if (modifier.attribute == this) {
       Some(modifier.value.asInstanceOf[T])
-    else
+    } else {
       None
+    }
 
   override def toString = name
 }
