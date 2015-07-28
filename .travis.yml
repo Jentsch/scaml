@@ -13,6 +13,7 @@ cache:
     - $HOME/.sbt/boot/
 
 after_success:
+  - bash <(curl -s https://codecov.io/bash)
   - >
       test "${TRAVIS_PULL_REQUEST}" = 'false' &&
       sh "$TRAVIS_BUILD_DIR/.travis.prepare.bintray.sh" &&
