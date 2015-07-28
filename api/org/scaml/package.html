@@ -107,6 +107,27 @@
     </span>
       <p class="shortcomment cmt">Attributes are data for a generator, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Attributes are data for a generator, e.g. FontFamily.</p><p>Each attribute should be instantiated only once. The comparison checks for identity.
 </p></div></div>
+    </li><li name="org.scaml.AttributeValuePair" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AttributeValuePairextendsModifier"></a>
+      <a id="AttributeValuePair:AttributeValuePair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AttributeValuePair.html"><span class="name">AttributeValuePair</span></a><span class="result"> extends <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@AttributeValuePairextendsModifier" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tuple of an Attribute and a value, ready to be applied to a node.</p><div class="fullcomment"><div class="comment cmt"><p>A tuple of an Attribute and a value, ready to be applied to a node.
+A single Modifier extends the seq type Modifiers because it allows all
+operations like Modifiers.</p><pre><span class="kw">val</span> warning = TextColor &gt; red</pre><p>Where <code>TextColor</code> is an <code>Attribute</code> (of type <code>Color</code>) and <code>red</code> a predefined color
+(both are part of <code>scaml.attributes</code>.</p><p>Inside a <code>Builder</code> it's now possible to do:</p><pre>text &amp; warning | <span class="lit">"Warning message"</span></pre><p>or even shorter:</p><pre><span class="kw">val</span> warning = text &amp; TextColor &gt; red
+warning<span class="lit">"Warning message"</span></pre></div></div>
     </li><li name="org.scaml.CurlyInlineable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="CurlyInlineableextendsInlineable"></a>
       <a id="CurlyInlineable:CurlyInlineable"></a>
@@ -135,7 +156,7 @@ Words are groups if none whitespaces and none curly braces.
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Element.html"><span class="name">Element</span></a><span class="params">(<span name="children">children: <span class="extype" name="scala.Seq">Seq</span>[<a href="Node.html" class="extype" name="org.scaml.Node">Node</a>]</span>, <span name="modifiers">modifiers: <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a> = <span class="symbol"><span class="name"><a href="Modifiers$.html">Modifiers.empty</a></span></span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Element.html"><span class="name">Element</span></a><span class="params">(<span name="children">children: <span class="extype" name="scala.Seq">Seq</span>[<a href="Node.html" class="extype" name="org.scaml.Node">Node</a>]</span>, <span name="modifiers">modifiers: <a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a> = <span class="symbol"><span class="name"><a href="Modifier$.html">Modifier.empty</a></span></span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scaml.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4><span class="permalink">
       <a href="../../index.html#org.scaml.package@ElementextendsNodewithProductwithSerializable" title="Permalink" target="_top">
@@ -163,7 +184,7 @@ Words are groups if none whitespaces and none curly braces.
 
 ml<span class="lit">"The color $blue looks like ${TextColor > blue}{this}"</span></pre><p>Create implicit conversions for every class the should be usable within a StringContext. String already has an
 implicit conversion to a [Text] [Node]
-Note the String could be implicitly converted to text node. Inlineables like <a href="Modifier.html" class="extype" name="org.scaml.Modifier">org.scaml.Modifier</a> or functions
+Note the String could be implicitly converted to text node. Inlineables like <a href="AttributeValuePair.html" class="extype" name="org.scaml.AttributeValuePair">org.scaml.AttributeValuePair</a> or functions
 affecting the content after it.
 </p></div></div>
     </li><li name="org.scaml.ML" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -182,41 +203,20 @@ affecting the content after it.
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Used for the string interpolation feature.</p><div class="fullcomment"><div class="comment cmt"><p>Used for the string interpolation feature.</p><p>Example:</p><pre>ml<span class="lit">"A $bold link ${Link > "</span>wikipedia.org<span class="lit">"}{to wikipedia}."</span></pre></div></div>
+      <p class="shortcomment cmt">Used for the string interpolation feature.</p><div class="fullcomment"><div class="comment cmt"><p>Used for the string interpolation feature.</p><p>Example:</p><pre>ml<span class="lit">"A $bold{ link ${Link > "</span>wikipedia.org<span class="lit">"}{to wikipedia} }."</span></pre></div></div>
     </li><li name="org.scaml.Modifier" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="ModifierextendsModifiers"></a>
+      <a id="ModifierextendsIterable[org.scaml.AttributeValuePair]withCurlyInlineable"></a>
       <a id="Modifier:Modifier"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">sealed abstract </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="Modifier.html"><span class="name">Modifier</span></a><span class="result"> extends <a href="Modifiers.html" class="extype" name="org.scaml.Modifiers">Modifiers</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@ModifierextendsModifiers" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">A tuple of an Attribute and a value, ready to be applied to a node.</p><div class="fullcomment"><div class="comment cmt"><p>A tuple of an Attribute and a value, ready to be applied to a node.
-A single Modifier extends the seq type Modifiers because it allows all
-operations like Modifiers.</p><pre><span class="kw">val</span> warning = TextColor &gt; red</pre><p>Where <code>TextColor</code> is an <code>Attribute</code> (of type <code>Color</code>) and <code>red</code> a predefined color
-(both are part of <code>scaml.attributes</code>.</p><p>Inside a <code>Builder</code> it's now possible to do:</p><pre>text &amp; warning | <span class="lit">"Warning message"</span></pre><p>or even shorter:</p><pre><span class="kw">val</span> warning = text &amp; TextColor &gt; red
-warning<span class="lit">"Warning message"</span></pre></div></div>
-    </li><li name="org.scaml.Modifiers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="ModifiersextendsIterable[org.scaml.Modifier]withCurlyInlineable"></a>
-      <a id="Modifiers:Modifiers"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">sealed </span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scaml.Modifier">Modifier</a>] with <a href="CurlyInlineable.html" class="extype" name="org.scaml.CurlyInlineable">CurlyInlineable</a></span>
+        <a href="Modifier.html"><span class="name">Modifier</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="AttributeValuePair.html" class="extype" name="org.scaml.AttributeValuePair">AttributeValuePair</a>] with <a href="CurlyInlineable.html" class="extype" name="org.scaml.CurlyInlineable">CurlyInlineable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@ModifiersextendsIterable[org.scaml.Modifier]withCurlyInlineable" title="Permalink" target="_top">
+      <a href="../../index.html#org.scaml.package@ModifierextendsIterable[org.scaml.AttributeValuePair]withCurlyInlineable" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -300,7 +300,24 @@ method.
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.scaml.HTML" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.scaml.AttributeValuePair" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AttributeValuePair"></a>
+      <a id="AttributeValuePair:AttributeValuePair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AttributeValuePair$.html"><span class="name">AttributeValuePair</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scaml.package@AttributeValuePair" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.scaml.HTML" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="HTML"></a>
       <a id="HTML:HTML"></a>
       <h4 class="signature">
@@ -330,23 +347,6 @@ method.
       </span>
       </h4><span class="permalink">
       <a href="../../index.html#org.scaml.package@Modifier" title="Permalink" target="_top">
-        <img src="../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
-    </li><li name="org.scaml.Modifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Modifiers"></a>
-      <a id="Modifiers:Modifiers"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="Modifiers$.html"><span class="name">Modifiers</span></a>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../index.html#org.scaml.package@Modifiers" title="Permalink" target="_top">
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
