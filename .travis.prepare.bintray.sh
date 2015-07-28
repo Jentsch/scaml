@@ -16,6 +16,5 @@ echo "Created ~/.bintray/.credentials file: Here it is: "
 ls -la ${FILE}
 
 # Enable sbt plugin
-cp .travis.plugins.sbt project/travis.plugins.sbt
+cp .travis.plugins.sbt project/bintray.sbt
 
-echo "bintrayPublishSettings" >> build.sbt
