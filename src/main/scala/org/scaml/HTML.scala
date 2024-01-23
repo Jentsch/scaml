@@ -7,7 +7,7 @@ import org.scaml.attributes._
  */
 object HTML {
   def apply(document: Node): String = {
-    val result = StringBuilder.newBuilder
+    val result = new StringBuilder()
     content(htmlPreamble(document), result)
     result.toString()
   }

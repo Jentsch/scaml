@@ -31,7 +31,7 @@ final class Color private[Color] (val intRep: Int) extends AnyVal {
 
 private[attributes] object Color {
   private def apply(r: Int, g: Int, b: Int) = {
-    def check(v: Int, name: String) {
+    def check(v: Int, name: String): Unit = {
       assert((v & 255) == v, s"$name should be in 0..255 but is $v")
     }
     check(r, "r")

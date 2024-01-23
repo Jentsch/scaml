@@ -1,7 +1,5 @@
 package org
 
-import org.scaml.WebElements
-
 import scala.collection.mutable.ListBuffer
 import scala.language.implicitConversions
 
@@ -56,12 +54,12 @@ package object scaml {
   implicit def intToText(int: Int): Text = Text(int.toString)
 
   implicit def stringsToTexts(strings: Iterable[String]): Seq[Text] =
-    strings.to[Seq].map(Text)
+    strings.toSeq.map(Text.apply)
 
   implicit def functionsToCurlyInlinable(function: Node => Node): CurlyInlineable = new CurlyInlineable {
     override def wrap(input: List[Node]): Node = function(Element(input))
   }
 
-  implicit def groupTraversable[C](traversable: Traversable[C])(implicit convertElements: C => Node): Element =
-    Element(traversable.map(convertElements).to[Seq])
+  implicit def groupTraversable[C](traversable: Iterable[C])(implicit convertElements: C => Node): Element =
+    Element(traversable.map(convertElements).toSeq)
 }

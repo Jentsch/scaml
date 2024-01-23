@@ -40,8 +40,6 @@ package object attributes
   /** Puts all characters of each word in lowercase */
   val lowercase = new TextTransform("lowercase")
 
-  val TextTransform = new Attribute[TextTransform]("TextTransform")
-
   val TextUnderline = new Toggle("TextUnderline")
   val TextOverline = new Toggle("TextOverline")
   val TextLineThrought = new Toggle("TextLineThrought")
@@ -85,8 +83,4 @@ package object attributes
    */
   val WhiteSpaceCollapse = new Toggle("WhiteSpaceCollapse")
 
-}
-
-package attributes {
-  final class TextTransform private[attributes] (val name: String)
 }

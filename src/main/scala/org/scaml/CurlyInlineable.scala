@@ -4,7 +4,7 @@ import scala.collection.mutable.ListBuffer
 
 /**
  * Inlineable that everything in curly braces after it or single 'word'.
- * Words are groups if none whitespaces and none curly braces.
+ * Words are groups if none white spaces and none curly braces.
  */
 trait CurlyInlineable extends Inlineable {
   def wrap(input: List[Node]): Node
@@ -35,8 +35,7 @@ trait CurlyInlineable extends Inlineable {
         }
       }
 
-      require(rem.nonEmpty, "Closing braces are missing")
-      val Right(withEndSymbol) = rem.head
+      val Right(withEndSymbol) = rem.headOption.getOrElse(sys.error("Closing braces are missing"))
       val Array(inside, outside) = withEndSymbol.split("}", 2)
       collected += inside
       rem = Right(outside) :: rem.tail

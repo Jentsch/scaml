@@ -1,7 +1,7 @@
 package org.scaml.attributes
 
 final class Distance private[Distance] (val millimeter: Double) extends AnyVal with Ordered[Distance] {
-  override def toString = millimeter + "mm"
+  override def toString = millimeter.toString ++ "mm"
 
   def centimeter = millimeter * 0.1
   // Based upon http://www.einheitenumrechner.mobi/ehu.php

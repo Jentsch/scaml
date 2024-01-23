@@ -24,3 +24,8 @@ project/plugins/project/
 
 # Local run of .travis.prepare.bintray.sh
 project/travis.plugins.sbt
+
+# Metals
+.metals
+.bloop
+.bsp
